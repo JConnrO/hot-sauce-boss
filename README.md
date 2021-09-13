@@ -1,10 +1,10 @@
 # special-octo-umbrella
 
-Idea: 
-
+#Idea: 
 MostBazaar
-Set up you're own shop. 
+Set up you're own shop/ shops.
 
+# Schedule
 9/16 - M  - 7:00 - 9 
 9/17 - T  - 6:30 - 9
 9/18 - W  - 6:30 - 9
