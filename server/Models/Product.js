@@ -30,3 +30,7 @@ const productSchema = new Schema({
         required: true
       }
     });
+
+    const Product = mongoose.model('Product', productSchema);
+
+module.exports = Product;
