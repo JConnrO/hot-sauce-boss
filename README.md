@@ -13,13 +13,19 @@ Data:
   User:
     1. Account Name
     2. Password
-    3. Shop items
+    3. Shop items    
   Shop Item: 
     1. Picture
     2. Price
     3. Name
     4. Hot/Scoville Rating
-    5. Description 
+    5. Hot Sauce owner name
+    6. Description (Optional)
+    
+  Shop: (Optional)
+    1. Shop Items Array
+    2. Shop Name
+    3. Shop owner name
   
 Search by hotness (Via tabs, no search bar)
 
