@@ -1,5 +1,3 @@
-![Wireframe](https://user-images.githubusercontent.com/14891319/133174756-5d4b96cd-5d66-407d-b1bc-b317dfa62f03.png)
-![Wireframe](https://user-images.githubusercontent.com/14891319/133174761-323c9393-6181-4840-8957-f8e1326fe2ba.png)
 # special-octo-umbrella
 
 #Idea: 
@@ -42,3 +40,4 @@ Search by hotness (Via tabs, no search bar)
 9/20 - M  - 6:30 - 9 -  
 9/21 - T  - 6:30 - 9 -  
 9/22 - W  - 6:30 - 9 - PRESENTATION 
+![Wireframe](https://user-images.githubusercontent.com/14891319/133174756-5d4b96cd-5d66-407d-b1bc-b317dfa62f03.png)
