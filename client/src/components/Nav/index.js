@@ -5,7 +5,7 @@ import './index.css';
 function Nav() {
 
     return (
-        <header>
+        <header className = "flex-row px-1">
 
             <h2>
                 <a data-testid="link" href="/">
