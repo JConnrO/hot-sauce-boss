@@ -12,6 +12,10 @@ function Nav() {
                 </a>
             </h2>
 
+            <nav>
+            <a href="/"><img src="https://img.icons8.com/dotty/30/000000/test-account.png" alt="account" /> </a>
+            </nav>
+
         </header>
     );
 }
