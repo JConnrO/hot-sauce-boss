@@ -1,5 +1,6 @@
 import React from 'react';
 import headerImage from "../../assets/nav/logo.png";
+import './index.css';
 
 function Nav() {
 
