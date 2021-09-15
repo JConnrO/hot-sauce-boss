@@ -1,29 +1,70 @@
+// import React from 'react';
+// import headerImage from "../../assets/nav/logo.png";
+// import './index.css';
+
+// function Nav() {
+
+//     return (
+//         <header>
+
+//             <h2>
+//                 <a data-testid="link" href="/">
+//                     <img src={headerImage} style={{ width: "10%", height: "10%" }} alt="logo" />
+//                 </a>
+//             </h2>
+
+//             <nav>
+//                 <ul>
+//                     <li>
+//                         {/* update href with correct link */}
+//                         <a href="/"><img src="https://img.icons8.com/dotty/30/000000/test-account.png" alt="account" /> </a>
+//                     </li>
+//                 </ul>
+//             </nav>
+
+//         </header>
+//     );
+// }
+
+// export default Nav;
+
 import React from 'react';
-import headerImage from "../../assets/nav/logo.png";
-import './index.css';
+import { makeStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
 
-function Nav() {
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+  },
+  menuButton: {
+    marginRight: theme.spacing(2),
+  },
+  title: {
+    flexGrow: 1,
+  },
+}));
 
-    return (
-        <header>
+export default function Nav() {
+  const classes = useStyles();
 
-            <h2>
-                <a data-testid="link" href="/">
-                    <img src={headerImage} style={{ width: "10%", height: "10%" }} alt="logo" />
-                </a>
-            </h2>
-
-            <nav>
-                <ul>
-                    <li>
-                        {/* update href with correct link */}
-                        <a href="/"><img src="https://img.icons8.com/dotty/30/000000/test-account.png" alt="account" /> </a>
-                    </li>
-                </ul>
-            </nav>
-
-        </header>
-    );
+  return (
+    <div className={classes.root}>
+      <AppBar position="static">
+        <Toolbar>
+          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+            <MenuIcon />
+          </IconButton>
+          <Typography variant="h6" className={classes.title}>
+            News
+          </Typography>
+          <Button color="inherit">Login</Button>
+        </Toolbar>
+      </AppBar>
+    </div>
+  );
 }
-
-export default Nav;
