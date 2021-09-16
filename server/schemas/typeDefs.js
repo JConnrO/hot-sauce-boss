@@ -21,7 +21,6 @@ const typeDefs = gql`
     firstName: String
     lastName: String
     email: String
-    orders: [Order]
   }
  
   type Auth {
