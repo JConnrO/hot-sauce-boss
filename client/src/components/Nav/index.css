@@ -1,0 +1,23 @@
+li {
+    list-style: none;
+  }
+
+div {
+    background-color: #FF70A6 ;
+}
+
+/* header {
+    display: flex;
+    flex-wrap: wrap;
+} */
+
+/* h2 {
+    display: flex; 
+    justify-content: left;
+}
+
+ul {
+    display: inline-flex;
+    justify-content: right;
+    align-items: right;
+} */
