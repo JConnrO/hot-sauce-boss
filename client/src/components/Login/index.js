@@ -7,7 +7,12 @@ import Link from '@mui/material/Link';
 import Button from '@mui/material/Button';
 
 const useStyles = makeStyles(theme => ({
-
+    coolers: {
+        backgroundColor: "#70D6FF"
+    },
+    text: {
+        color: "#FF70A6"
+    }
 }))
 
 const Login = () => {
@@ -55,12 +60,13 @@ const Login = () => {
                 type="submit"
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
+                className={classes.coolers}
             >
                 Login
             </Button>
             <Grid container>
                 <Grid item>
-                    <Link href="#" variant="body2">
+                    <Link href="#" variant="body2" className={classes.text}>
                         {"Don't have an account? Sign Up"}
                     </Link>
                 </Grid>

@@ -35,11 +35,12 @@ const useStyles = makeStyles((theme) => ({
         color: "#FF70A6",
         // color: "#E9FF70",
         fontWeight: "bold"
-    }, 
+    },
     window: {
         backgroundColor: "#FFD670",
-        height: "250px", 
-        width: "250px"
+        height: "250px",
+        width: "250px",
+        position: "static"
     }
 }));
 
@@ -66,6 +67,7 @@ export default function Nav() {
                 </Toolbar>
             </AppBar>
             <Modal
+                style={{ justifyContent: "center", position: "static" }}
                 className={classes.window}
                 open={showModal}
                 onClose={() => setShowModal(false)}
