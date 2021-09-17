@@ -54,25 +54,23 @@ const Login = () => {
                 <TextField
                     margin="normal"
                     required
-                    id="email"
-                    label="Email Address"
-                    name="email"
+                    id="username"
+                    label="Username"
+                    name="username"
                     size="small"
-                    autoComplete="email"
+                    autoComplete="username"
                     autoFocus
                 />
-                <div>
-                    <TextField
-                        margin="normal"
-                        required
-                        name="password"
-                        label="Password"
-                        type="password"
-                        id="password"
-                        size="small"
-                        autoComplete="current-password"
-                    />
-                </div>
+                <TextField
+                    margin="normal"
+                    required
+                    name="password"
+                    label="Password"
+                    type="password"
+                    id="password"
+                    size="small"
+                    autoComplete="current-password"
+                />
             </Grid>
             <Grid container alignItems="center" justifyContent="center">
                 <Button
