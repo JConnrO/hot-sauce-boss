@@ -2,7 +2,6 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import Link from '@mui/material/Link';
 import Button from '@mui/material/Button';
 import Userform from "../Userform"
 
@@ -15,7 +14,7 @@ const useStyles = makeStyles(theme => ({
     }
 }))
 
-const Login = () => {
+const Signup = () => {
 
     const classes = useStyles();
 
@@ -59,18 +58,11 @@ const Login = () => {
                     sx={{ mt: 3, mb: 2 }}
                     className={classes.coolers}
                 >
-                    Login
+                    Signup
                 </Button>
-            </Grid>
-            <Grid container alignItems="center" justifyContent="center">
-                <Grid item>
-                    <Link href="#" variant="body2" className={classes.text}>
-                        {"Don't have an account? Sign Up"}
-                    </Link>
-                </Grid>
             </Grid>
         </Box >
     )
 }
 
-export default Login;
+export default Signup;

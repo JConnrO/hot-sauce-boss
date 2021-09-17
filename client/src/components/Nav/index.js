@@ -9,6 +9,7 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import headerImage from "../../assets/nav/logo.png";
 import Login from '../Login/index';
+import Signup from '../Signup/index';
 import Modal from '@mui/material/Modal';
 // import * as React from 'react';
 // import Box from '@mui/material/Box';
@@ -66,6 +67,8 @@ export default function Nav() {
                     {/* <Nav.Link className={classes.text} onClick={() => setShowModal(true)}>Login/Sign Up</Nav.Link> */}
                     {/* <Button className={classes.text}>Login/Sign Up</Button> */}
                     <Button className={classes.text} onClick={() => setShowModal(true)}>Login</Button>
+                    <Button className={classes.text} onClick={() => setShowModal(true)}>Sign Up</Button>
+
                 </Toolbar>
             </AppBar>
             <Modal
@@ -77,6 +80,16 @@ export default function Nav() {
                 onClose={() => setShowModal(false)}
                 aria-labelledby='signup-modal'>
                 <Login handleModalClose={() => setShowModal(false)} ></Login>
+            </Modal>
+            <Modal
+                style={{
+                    position: "static"
+                }}
+                className={classes.window}
+                open={showModal}
+                onClose={() => setShowModal(false)}
+                aria-labelledby='signup-modal'>
+                <Signup handleModalClose={() => setShowModal(false)}></Signup>
             </Modal>
         </div >
     );
