@@ -4,7 +4,6 @@ import TextField from '@mui/material/TextField';
 import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import Button from '@mui/material/Button';
-import Modal from '@mui/material/Modal';
 
 const SignupForm = () => {
 
@@ -19,7 +18,6 @@ const SignupForm = () => {
     };
 
     return (
-        <Modal>
             <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
                 <TextField
                     margin="normal"
@@ -57,7 +55,6 @@ const SignupForm = () => {
                     </Grid>
                 </Grid>
             </Box>
-        </Modal>
     )
 }
 

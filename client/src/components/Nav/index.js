@@ -1,4 +1,5 @@
-import React from 'react';
+// import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -7,9 +8,8 @@ import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import headerImage from "../../assets/nav/logo.png";
-import SignupForm from '../SignupForm';
-// import SignUpForm from '../Signup';
-// import Modal from '@mui/material/Modal';
+import SignupForm from '../SignupForm/index';
+import Modal from '@mui/material/Modal';
 // import * as React from 'react';
 // import Box from '@mui/material/Box';
 
@@ -42,7 +42,7 @@ export default function Nav() {
     const classes = useStyles();
 
     // set modal display state
-    // const [showModal, setShowModal] = useState(false);
+    const [showModal, setShowModal] = useState(false);
 
     return (
         <div className={classes.root} >
@@ -57,10 +57,16 @@ export default function Nav() {
                     </Typography>
                     {/* <Nav.Link className={classes.text} onClick={() => setShowModal(true)}>Login/Sign Up</Nav.Link> */}
                     {/* <Button className={classes.text}>Login/Sign Up</Button> */}
-                    <Button onClick={handleOpen}>Open modal</Button>
-                    <SignupForm></SignupForm>
+                    <Button className={classes.text} onClick={() => setShowModal(true)}>Login</Button>
                 </Toolbar>
             </AppBar>
+            <Modal
+                open={showModal}
+                onClose={() => setShowModal(false)}
+                aria-labelledby='signup-modal'>
+               <SignupForm handleModalClose={() => setShowModal(false)} ></SignupForm>
+            </Modal>
         </div >
+
     );
 }
