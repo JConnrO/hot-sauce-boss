@@ -5,7 +5,7 @@ import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import Button from '@mui/material/Button';
 
-const SignupForm = () => {
+const Login = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -45,7 +45,7 @@ const SignupForm = () => {
                     variant="contained"
                     sx={{ mt: 3, mb: 2 }}
                 >
-                    Sign In
+                    Login
                 </Button>
                 <Grid container>
                     <Grid item>
@@ -58,4 +58,4 @@ const SignupForm = () => {
     )
 }
 
-export default SignupForm;
+export default Login;

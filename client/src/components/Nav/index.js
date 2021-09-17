@@ -8,7 +8,7 @@ import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import headerImage from "../../assets/nav/logo.png";
-import SignupForm from '../SignupForm/index';
+import Login from '../Login/index';
 import Modal from '@mui/material/Modal';
 // import * as React from 'react';
 // import Box from '@mui/material/Box';
@@ -64,7 +64,7 @@ export default function Nav() {
                 open={showModal}
                 onClose={() => setShowModal(false)}
                 aria-labelledby='signup-modal'>
-               <SignupForm handleModalClose={() => setShowModal(false)} ></SignupForm>
+                <Login handleModalClose={() => setShowModal(false)} ></Login>
             </Modal>
         </div >
 
