@@ -35,6 +35,9 @@ const useStyles = makeStyles((theme) => ({
         color: "#FF70A6",
         // color: "#E9FF70",
         fontWeight: "bold"
+    }, 
+    window: {
+        backgroundColor: "#FFD670"
     }
 }));
 
@@ -61,6 +64,7 @@ export default function Nav() {
                 </Toolbar>
             </AppBar>
             <Modal
+                className={classes.window}
                 open={showModal}
                 onClose={() => setShowModal(false)}
                 aria-labelledby='signup-modal'>

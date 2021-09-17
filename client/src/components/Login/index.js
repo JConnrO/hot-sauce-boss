@@ -1,16 +1,22 @@
 import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import Button from '@mui/material/Button';
 
+const useStyles = makeStyles(theme => ({
+
+}))
+
 const Login = () => {
+
+    const classes = useStyles();
 
     const handleSubmit = (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
-        // eslint-disable-next-line no-console
         console.log({
             email: data.get('email'),
             password: data.get('password'),
@@ -18,30 +24,31 @@ const Login = () => {
     };
 
     return (
-            <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+            <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }} 
+
+            >
                 <TextField
                     margin="normal"
                     required
-                    fullWidth
                     id="email"
                     label="Email Address"
                     name="email"
+                    size= "small"
                     autoComplete="email"
                     autoFocus
                 />
                 <TextField
                     margin="normal"
                     required
-                    fullWidth
                     name="password"
                     label="Password"
                     type="password"
                     id="password"
+                    size= "small"
                     autoComplete="current-password"
                 />
                 <Button
                     type="submit"
-                    fullWidth
                     variant="contained"
                     sx={{ mt: 3, mb: 2 }}
                 >
