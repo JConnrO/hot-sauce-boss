@@ -24,19 +24,22 @@ const Login = () => {
     };
 
     return (
-            <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }} 
+        <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}
 
-            >
+        >
+            <div>
                 <TextField
                     margin="normal"
                     required
                     id="email"
                     label="Email Address"
                     name="email"
-                    size= "small"
+                    size="small"
                     autoComplete="email"
                     autoFocus
                 />
+            </div>
+            <div>
                 <TextField
                     margin="normal"
                     required
@@ -44,24 +47,25 @@ const Login = () => {
                     label="Password"
                     type="password"
                     id="password"
-                    size= "small"
+                    size="small"
                     autoComplete="current-password"
                 />
-                <Button
-                    type="submit"
-                    variant="contained"
-                    sx={{ mt: 3, mb: 2 }}
-                >
-                    Login
-                </Button>
-                <Grid container>
-                    <Grid item>
-                        <Link href="#" variant="body2">
-                            {"Don't have an account? Sign Up"}
-                        </Link>
-                    </Grid>
+            </div>
+            <Button
+                type="submit"
+                variant="contained"
+                sx={{ mt: 3, mb: 2 }}
+            >
+                Login
+            </Button>
+            <Grid container>
+                <Grid item>
+                    <Link href="#" variant="body2">
+                        {"Don't have an account? Sign Up"}
+                    </Link>
                 </Grid>
-            </Box>
+            </Grid>
+        </Box>
     )
 }
 
