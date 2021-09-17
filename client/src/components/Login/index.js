@@ -51,16 +51,16 @@ const Login = () => {
             }}
         >
             <Grid container alignItems="center" justifyContent="center" flexDirection="column">
-                    <TextField
-                        margin="normal"
-                        required
-                        id="email"
-                        label="Email Address"
-                        name="email"
-                        size="small"
-                        autoComplete="email"
-                        autoFocus
-                    />
+                <TextField
+                    margin="normal"
+                    required
+                    id="email"
+                    label="Email Address"
+                    name="email"
+                    size="small"
+                    autoComplete="email"
+                    autoFocus
+                />
                 <div>
                     <TextField
                         margin="normal"
@@ -74,22 +74,24 @@ const Login = () => {
                     />
                 </div>
             </Grid>
-            <Button
-                type="submit"
-                variant="contained"
-                sx={{ mt: 3, mb: 2 }}
-                className={classes.coolers}
-            >
-                Login
-            </Button>
-            <Grid container>
+            <Grid container alignItems="center" justifyContent="center">
+                <Button
+                    type="submit"
+                    variant="contained"
+                    sx={{ mt: 3, mb: 2 }}
+                    className={classes.coolers}
+                >
+                    Login
+                </Button>
+            </Grid>
+            <Grid container alignItems="center" justifyContent="center">
                 <Grid item>
                     <Link href="#" variant="body2" className={classes.text}>
                         {"Don't have an account? Sign Up"}
                     </Link>
                 </Grid>
             </Grid>
-        </Box>
+        </Box >
     )
 }
 
