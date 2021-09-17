@@ -29,36 +29,56 @@ const Login = () => {
     };
 
     return (
-        <Box c
-            omponent="form"
+        <Box component="form"
             onSubmit={handleSubmit}
             noValidate sx={{ mt: 1 }}
-            style={{ paddingLeft: "20px"}}
+            alignContent="center"
+            alignItems="center"
+            justifyContent="center"
+            style=
+            {{
+                // paddingLeft: "20px",
+                // width: "250px", 
+                // height: "250px",
+                backgroundColor: "#FFD670",
+                // justifyContent: "center",
+                position: 'absolute',
+                top: '50%',
+                left: '50%',
+                transform: 'translate(-50%, -50%)',
+                width: 400,
+                // bgcolor: 'background.paper',
+                border: '2px solid #000',
+                boxShadow: 24,
+                pt: 2,
+                px: 4,
+                pb: 3,
+            }}
         >
-            <div>
-                <TextField
-                    margin="normal"
-                    required
-                    id="email"
-                    label="Email Address"
-                    name="email"
-                    size="small"
-                    autoComplete="email"
-                    autoFocus
-                />
-            </div>
-            <div>
-                <TextField
-                    margin="normal"
-                    required
-                    name="password"
-                    label="Password"
-                    type="password"
-                    id="password"
-                    size="small"
-                    autoComplete="current-password"
-                />
-            </div>
+            <Grid container alignItems="center" justifyContent="center" flexDirection="column">
+                    <TextField
+                        margin="normal"
+                        required
+                        id="email"
+                        label="Email Address"
+                        name="email"
+                        size="small"
+                        autoComplete="email"
+                        autoFocus
+                    />
+                <div>
+                    <TextField
+                        margin="normal"
+                        required
+                        name="password"
+                        label="Password"
+                        type="password"
+                        id="password"
+                        size="small"
+                        autoComplete="current-password"
+                    />
+                </div>
+            </Grid>
             <Button
                 type="submit"
                 variant="contained"

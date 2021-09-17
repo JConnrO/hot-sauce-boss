@@ -16,6 +16,7 @@ import Modal from '@mui/material/Modal';
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
+        alignItems: 'center'
     },
     menuButton: {
         marginRight: theme.spacing(2),
@@ -37,10 +38,11 @@ const useStyles = makeStyles((theme) => ({
         fontWeight: "bold"
     },
     window: {
-        backgroundColor: "#FFD670",
-        height: "250px",
-        width: "250px",
-        position: "static"
+        // backgroundColor: "#FFD670",
+        // height: "250px",
+        // width: "250px",
+        // position: "static"
+        // justifyContent: "center"
     }
 }));
 
@@ -67,7 +69,9 @@ export default function Nav() {
                 </Toolbar>
             </AppBar>
             <Modal
-                style={{ justifyContent: "center", position: "static" }}
+                style={{
+                    position: "static"
+                }}
                 className={classes.window}
                 open={showModal}
                 onClose={() => setShowModal(false)}
@@ -75,6 +79,5 @@ export default function Nav() {
                 <Login handleModalClose={() => setShowModal(false)} ></Login>
             </Modal>
         </div >
-
     );
 }
