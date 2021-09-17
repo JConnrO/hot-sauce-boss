@@ -51,7 +51,8 @@ export default function Nav() {
     const classes = useStyles();
 
     // set modal display state
-    const [showModal, setShowModal] = useState(false);
+    const [loginModal, setLoginModal] = useState(false);
+    const [signupModal, setSignupModal] = useState(false);
 
     return (
         <div className={classes.root} >
@@ -66,9 +67,17 @@ export default function Nav() {
                     </Typography>
                     {/* <Nav.Link className={classes.text} onClick={() => setShowModal(true)}>Login/Sign Up</Nav.Link> */}
                     {/* <Button className={classes.text}>Login/Sign Up</Button> */}
-                    <Button className={classes.text} onClick={() => setShowModal(true)}>Login</Button>
-                    <Button className={classes.text} onClick={() => setShowModal(true)}>Sign Up</Button>
-
+                    <Button className={classes.text}
+                        onClick={() => {
+                            setLoginModal(true)
+                            setSignupModal(false)
+                        }}>Login
+                    </Button>
+                    <Button className={classes.text}
+                        onClick={() => {
+                            setSignupModal(true)
+                            setLoginModal(false)
+                        }}>Sign Up</Button>
                 </Toolbar>
             </AppBar>
             <Modal
@@ -76,20 +85,20 @@ export default function Nav() {
                     position: "static"
                 }}
                 className={classes.window}
-                open={showModal}
-                onClose={() => setShowModal(false)}
-                aria-labelledby='signup-modal'>
-                <Login handleModalClose={() => setShowModal(false)} ></Login>
+                open={loginModal}
+                onClose={() => setLoginModal(false)}
+                aria-labelledby='login-modal'>
+                <Login handleModalClose={() => setLoginModal(false)} ></Login>
             </Modal>
             <Modal
                 style={{
                     position: "static"
                 }}
                 className={classes.window}
-                open={showModal}
-                onClose={() => setShowModal(false)}
+                open={signupModal}
+                onClose={() => setSignupModal(false)}
                 aria-labelledby='signup-modal'>
-                <Signup handleModalClose={() => setShowModal(false)}></Signup>
+                <Signup handleModalClose={() => setSignupModal(false)}></Signup>
             </Modal>
         </div >
     );

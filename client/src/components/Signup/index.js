@@ -58,7 +58,7 @@ const Signup = () => {
                     sx={{ mt: 3, mb: 2 }}
                     className={classes.coolers}
                 >
-                    Signup
+                    Sign Up
                 </Button>
             </Grid>
         </Box >
