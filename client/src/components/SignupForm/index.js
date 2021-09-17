@@ -15,6 +15,11 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
+import Auth from '../utils/auth';
+
+import { useMutation } from '@apollo/client';
+import { ADD_USER } from '../utils/mutations';
+
 const useStyles = makeStyles((theme) => ({
     coolers: {
         color: "#70D6FF"
