@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -7,10 +7,11 @@ import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import headerImage from "../../assets/nav/logo.png";
-import SignUpForm from '../SignupForm';
-import Modal from '@mui/material/Modal';
+import SignupForm from '../SignupForm';
+// import SignUpForm from '../Signup';
+// import Modal from '@mui/material/Modal';
 // import * as React from 'react';
-import Box from '@mui/material/Box';
+// import Box from '@mui/material/Box';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -41,7 +42,7 @@ export default function Nav() {
     const classes = useStyles();
 
     // set modal display state
-    const [showModal, setShowModal] = useState(false);
+    // const [showModal, setShowModal] = useState(false);
 
     return (
         <div className={classes.root} >
@@ -56,27 +57,8 @@ export default function Nav() {
                     </Typography>
                     {/* <Nav.Link className={classes.text} onClick={() => setShowModal(true)}>Login/Sign Up</Nav.Link> */}
                     {/* <Button className={classes.text}>Login/Sign Up</Button> */}
-                    <Button className={classes.text} onClick={() => setShowModal(true)}>Login/Sign Up</Button>
-                    <Modal
-                        size='lg'
-                        show={showModal}
-                        onHide={() => setShowModal(false)}
-                        aria-labelledby="modal-modal-title"
-                        aria-describedby="modal-modal-description"
-                    >
-                        <Box >
-                            <Typography id="modal-modal-title" variant="h6" component="h2">
-                                <Nav.Item>
-                                    <Nav.Link eventKey='signup'>Sign Up</Nav.Link>
-                                </Nav.Item>
-                            </Typography>
-                            <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                                <Nav.Item eventKey='signup'>
-                                    <SignUpForm handleModalClose={() => setShowModal(false)} />
-                                </Nav.Item>
-                            </Typography>
-                        </Box>
-                    </Modal>
+                    <Button onClick={handleOpen}>Open modal</Button>
+                    <SignupForm></SignupForm>
                 </Toolbar>
             </AppBar>
         </div >
