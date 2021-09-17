@@ -18,9 +18,8 @@ const typeDefs = gql`
 
   type User {
     _id: ID
-    firstName: String
-    lastName: String
-    email: String
+    userName: String
+    password: String
   }
  
   type Auth {

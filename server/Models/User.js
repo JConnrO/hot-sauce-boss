@@ -13,8 +13,13 @@ const userSchema = new Schema({
         type: String,
         required: true,
         minlength: 5
+    },
+    // Hot Sauce reaction... NEEDS ATTENTION 
+    hotSauce: {
+        type: Schema.Types.ObjectId,
+        ref: 'Hot Sauce',
+        required: true
     }
-    // Add shop items!!!!!!!!!!!
 });
 
 //Pre-saves the middleware to create the user password
