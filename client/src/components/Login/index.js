@@ -29,8 +29,11 @@ const Login = () => {
     };
 
     return (
-        <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}
-
+        <Box c
+            omponent="form"
+            onSubmit={handleSubmit}
+            noValidate sx={{ mt: 1 }}
+            style={{ paddingLeft: "20px"}}
         >
             <div>
                 <TextField
