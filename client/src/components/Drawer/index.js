@@ -1,18 +1,18 @@
 
 import React, { useState } from 'react';
-
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
 import DraftsIcon from '@material-ui/icons/Drafts';
 import SendIcon from '@material-ui/icons/Send';
 import Modal from '@mui/material/Modal';
 import Login from '../Login/index';
-
+import Signup from '../Signup/index';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
 
 const StyledMenu = withStyles({
     paper: {
@@ -48,6 +48,7 @@ const StyledMenuItem = withStyles((theme) => ({
 export default function MenuDrawer() {
 
     const [loginModal, setLoginModal] = useState(false);
+    const [signupModal, setSignupModal] = useState(false);
 
     const [anchorEl, setAnchorEl] = React.useState(null);
 
@@ -61,15 +62,16 @@ export default function MenuDrawer() {
 
     return (
         <div>
-            <Button
+            <IconButton
                 aria-controls="customized-menu"
                 aria-haspopup="true"
                 variant="contained"
                 color="primary"
                 onClick={handleClick}
             >
-                Open Menu
-            </Button>
+                 <MenuIcon />
+            </IconButton>
+
             <StyledMenu
                 id="customized-menu"
                 anchorEl={anchorEl}
@@ -82,27 +84,28 @@ export default function MenuDrawer() {
                     <Button
                         onClick={() => {
                             setLoginModal(true)
-
+                            setSignupModal(false)
                         }}>Login
                     </Button>
 
                 </StyledMenuItem>
 
                 <StyledMenuItem>
-                    <ListItemIcon>
-                        <SendIcon fontSize="small" />
-                    </ListItemIcon>
+                    <Button 
+                        onClick={() => {
+                            setSignupModal(true)
+                            setLoginModal(false)
+                        }}>Sign Up</Button>
+
+                </StyledMenuItem>
+
+                <StyledMenuItem>
                     <ListItemText primary="Create Shop" />
                 </StyledMenuItem>
 
                 <StyledMenuItem>
-                    <ListItemIcon>
-                        <DraftsIcon fontSize="small" />
-                    </ListItemIcon>
                     <ListItemText primary="Add Product" />
                 </StyledMenuItem>
-
-
 
             </StyledMenu>
 
@@ -114,6 +117,16 @@ export default function MenuDrawer() {
                 onClose={() => setLoginModal(false)}
                 aria-labelledby='login-modal'>
                 <Login handleModalClose={() => setLoginModal(false)} ></Login>
+            </Modal>
+
+            <Modal
+                style={{
+                    position: "static"
+                }}
+                open={signupModal}
+                onClose={() => setSignupModal(false)}
+                aria-labelledby='signup-modal'>
+                <Signup handleModalClose={() => setSignupModal(false)}></Signup>
             </Modal>
         </div>
     );
