@@ -35,6 +35,34 @@ db.once('open', async () => {
       price: 16.99,
       quantity: 50
     },
+    {
+      name: 'Valentina Extra Hot Sauce',
+      category: categories[2]._id,
+      description:
+        'Mexicos number one selling hot sauce. Valentina Extra Hot Sauce is a red, pourable hot sauce from Mexico made from puya chilis and is thicker and less acidic than Tabasco with a distinct chili flavour. ',
+      image: 'toilet-paper.jpg',
+      price: 8.99,
+      quantity: 100
+    },
+    {
+      name: 'Old World Christmas Hot Sauce',
+      category: categories[3]._id,
+      description:
+        'Old Chrismasy Chrismacy',
+      image: 'soap.jpg',
+      price: 32.00,
+      quantity: 50
+    },
+    {
+      name: 'Tuong Ot Hot Sauce ',
+      category: categories[1]._id,
+      description:
+        'Sriracha Hot Chili Sauce from Huy Fong. Made from sun ripened chilis',
+      image: 'wooden-spoons.jpg',
+      price: 14.99,
+      quantity: 100
+    },
+    
     
   ]);
 
