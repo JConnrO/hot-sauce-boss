@@ -18,7 +18,7 @@ const typeDefs = gql`
 
   type User {
     _id: ID
-    userName: String
+    name: String
     password: String
   }
  
@@ -34,4 +34,4 @@ const typeDefs = gql`
     user: User
   }
   `
-  module.exports = typeDefs;
+module.exports = typeDefs;
