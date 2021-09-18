@@ -34,7 +34,13 @@ const typeDefs = gql`
     product(_id: ID!): Product
     user: [User]
   }
-
+  input ProductInput {
+    name: String
+    description: String
+    image: String
+    quantity: Int
+    price: Float
+  }
   type Mutation {
     addProduct(
       name: String!
@@ -42,13 +48,7 @@ const typeDefs = gql`
       price: Float!
       quantity: Int!
     ): Product
-    updateProduct(
-      _id: ID!
-      name: String
-      description: String
-      quantity: Int
-      price: Float
-    ): Product
+    updateProduct(_id: ID!, productInput: ProductInput): Product
   }
 `;
 module.exports = typeDefs;
