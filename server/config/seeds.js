@@ -81,7 +81,32 @@ db.once('open', async () => {
       price: 79.99,
       quantity: 50
     },
-    
+    {
+      name: 'Craft Hot Sauce Inferno Farms',
+      category: categories[3]._id,
+      description:
+        'About the Sauce: Volcanus, made with the world’s hottest pepper, Smokin’ Ed’s Carolina Reaper, this sauce packs a punch for the uninitiated. Your lips ',
+      image: 'bedtime-book.jpg',
+      price: 9.99,
+      quantity: 100
+    },
+    {
+      name: 'Louisiana Hot Sauce',
+      category: categories[4]._id,
+      description: 'a hot sauce with a 90-year history of great taste and quality. using time-honored techniques of Louisiana style cooking, this hot sauce is produced ...',
+      image: 'spinning-top.jpg',
+      price: 8.99,
+      quantity: 10
+    },
+    {
+      name: 'Jolokia Ghost Mental Hot Sauce',
+      category: categories[4]._id,
+      description:
+        'This Aubrey D. Rebel hot sauce is made with the GHOST pepper (a.k.a. JOLOKIA/NAGA) and it is the hottest natural and unmodified pepper in the world We ...',
+      image: 'plastic-horses.jpg',
+      price: 17.99,
+      quantity: 1000
+    } 
   ]);
 
   console.log('products seeded');
@@ -93,11 +118,6 @@ db.once('open', async () => {
     lastName: 'Washington',
     email: 'pamela@testmail.com',
     password: 'password12345',
-    orders: [
-      {
-        products: [products[0]._id, products[0]._id, products[1]._id]
-      }
-    ]
   });
 
   await User.create({
@@ -111,3 +131,4 @@ db.once('open', async () => {
 
   process.exit();
 });
+
