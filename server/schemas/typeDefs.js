@@ -30,13 +30,19 @@ const typeDefs = gql`
 
   type Query {
     categories: [Category]
-    products(name: String): Product
+    products(name: String): [Product]
     product(_id: ID!): Product
     user: [User]
   }
 
   type Mutation {
-    addProduct(name: String!, description: String!, price: Float!): Product
+    addProduct(
+      name: String!
+      description: String!
+      price: Float!
+      quantity: Int!
+    ): Product
+    updateProduct(_id: ID!): Product
   }
 `;
 module.exports = typeDefs;

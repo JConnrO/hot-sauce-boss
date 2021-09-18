@@ -41,6 +41,11 @@ const resolvers = {
 
       return product;
     },
+    updateProduct: async (parent, args) => {
+      Product.findByIdAndUpdate(_id, args, {
+        new: true,
+      });
+    },
   },
 };
 
