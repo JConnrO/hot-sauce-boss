@@ -8,6 +8,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Modal from '@mui/material/Modal';
 import Login from '../Login/index';
 import Signup from '../Signup/index';
+import AddProduct from '../AddProduct/index';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 
@@ -46,6 +47,7 @@ export default function MenuDrawer() {
 
     const [loginModal, setLoginModal] = useState(false);
     const [signupModal, setSignupModal] = useState(false);
+    const [addProductModal, setAddProductModal] = useState(false);
 
     const [anchorEl, setAnchorEl] = React.useState(null);
 
@@ -82,6 +84,7 @@ export default function MenuDrawer() {
                         onClick={() => {
                             setLoginModal(true)
                             setSignupModal(false)
+                            setAddProductModal(false)
                         }}>Login
                     </Button>
 
@@ -92,6 +95,7 @@ export default function MenuDrawer() {
                         onClick={() => {
                             setSignupModal(true)
                             setLoginModal(false)
+                            setAddProductModal(false)
                         }}>Sign Up</Button>
 
                 </StyledMenuItem>
@@ -101,7 +105,13 @@ export default function MenuDrawer() {
                 </StyledMenuItem>
 
                 <StyledMenuItem>
-                    <ListItemText primary="Add Product" />
+                    {/* <ListItemText primary="Add Product" /> */}
+                    <Button 
+                        onClick={() => {
+                            setAddProductModal(true)
+                            setSignupModal(false)
+                            setLoginModal(false)
+                        }}>Add Product</Button>
                 </StyledMenuItem>
 
             </StyledMenu>
@@ -125,6 +135,17 @@ export default function MenuDrawer() {
                 aria-labelledby='signup-modal'>
                 <Signup handleModalClose={() => setSignupModal(false)}></Signup>
             </Modal>
+
+            <Modal
+                style={{
+                    position: "static"
+                }}
+                open={addProductModal}
+                onClose={() => setAddProductModal(false)}
+                aria-labelledby='addproduct-modal'>
+                <AddProduct handleModalClose={() => setAddProductModal(false)}></AddProduct>
+            </Modal>
+
         </div>
     );
 }
