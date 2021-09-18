@@ -42,7 +42,13 @@ const typeDefs = gql`
       price: Float!
       quantity: Int!
     ): Product
-    updateProduct(_id: ID!): Product
+    updateProduct(
+      _id: ID!
+      name: String
+      description: String
+      quantity: Int
+      price: Float
+    ): Product
   }
 `;
 module.exports = typeDefs;

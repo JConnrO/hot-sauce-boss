@@ -36,15 +36,17 @@ const resolvers = {
   },
 
   Mutation: {
-    addProduct: async (parents, args) => {
+    addProduct: async (parent, args) => {
       const product = await Product.create(args);
 
       return product;
     },
-    updateProduct: async (parent, args) => {
-      Product.findByIdAndUpdate(_id, args, {
-        new: true,
-      });
+    updateProduct: async (parent, args, { _id }) => {
+      //   // vriable of all fields object based
+      //   const arg = { name, description, quantity, price };
+      //   // paass variable inside args
+
+      return Product.findByIdAndUpdate(_id, args, { new: true });
     },
   },
 };
