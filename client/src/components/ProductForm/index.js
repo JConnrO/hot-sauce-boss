@@ -10,23 +10,44 @@ const ProductForm = () => {
                 <TextField
                     margin="normal"
                     required
-                    id="username"
-                    label="Username"
-                    name="username"
+                    id="productname"
+                    label="Product Name"
+                    name="productname"
                     size="small"
-                    autoComplete="username"
+                    // autoComplete="productname"
                     autoFocus
                 />
+
+                <TextField
+                    id="outlined-multiline-static"
+                    multiline
+                    rows={4}
+                    required
+                    name="description"
+                    label="Description"
+                    type="description"
+                />
+
+                <TextField
+                    id="outlined-number"
+                    label="Quantity"
+                    type="quantity"
+                    inputProps={{ min: 0 }}
+                    InputLabelProps={{
+                        shrink: true,
+                    }}
+                />
+
                 <TextField
                     margin="normal"
                     required
-                    name="password"
-                    label="Password"
-                    type="password"
-                    id="password"
+                    id="category"
+                    label="Category"
+                    name="category"
                     size="small"
-                    autoComplete="current-password"
+                    autoFocus
                 />
+
             </Grid>
         </ >
     )
