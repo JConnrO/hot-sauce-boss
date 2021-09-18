@@ -4,7 +4,7 @@ const { Schema } = mongoose;
 const bcrypt = require("bcrypt");
 
 const userSchema = new Schema({
-    userName: {
+    name: {
         type: String,
         required: true,
         trim: true
@@ -13,8 +13,13 @@ const userSchema = new Schema({
         type: String,
         required: true,
         minlength: 5
-    }
-    // Add shop items!!!!!!!!!!!
+    },
+    //Make a list of heat sigs, link to the specific ID
+    products: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Products',
+        required: false
+    }]
 });
 
 //Pre-saves the middleware to create the user password
@@ -35,3 +40,7 @@ userSchema.methods.isCorrectPassword = async function (password) {
 const User = mongoose.model('User', userSchema)
 
 module.exports = User;
+
+//create hot sauce -can choose label
+//User - main sauces
+//created on user side, link by typing in name

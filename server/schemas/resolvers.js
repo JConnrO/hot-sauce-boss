@@ -36,6 +36,29 @@ const resolvers = {
   },
 
   Mutation: {
+    addUser: async (parent, args) => {
+      const userName = await User.create(args);
+      const token = signToken(userName);
+
+      return { token, user };
+    },
+    login: async (parent, { email, password }) => {
+      const userName = await User.findOne({ email });
+
+      if (!userName) {
+        throw new AuthenticationError("Invalid user!");
+      }
+
+      const correctPw = await userName.isCorrectPassword(password);
+
+      if (!correctPw) {
+        throw new AuthenticationError("Invalid password!");
+      }
+
+      const token = signToken(userName);
+
+      return { token, userName };
+    },
     // add a product
     addProduct: async (parent, args) => {
       const product = await Product.create(args);
