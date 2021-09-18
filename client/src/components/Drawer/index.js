@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
@@ -68,7 +67,7 @@ export default function MenuDrawer() {
                 color="primary"
                 onClick={handleClick}
             >
-                 <MenuIcon />
+                <MenuIcon />
             </IconButton>
 
             <StyledMenu
@@ -91,7 +90,7 @@ export default function MenuDrawer() {
                 </StyledMenuItem>
 
                 <StyledMenuItem>
-                    <Button 
+                    <Button
                         onClick={() => {
                             setSignupModal(true)
                             setLoginModal(false)
@@ -105,8 +104,7 @@ export default function MenuDrawer() {
                 </StyledMenuItem>
 
                 <StyledMenuItem>
-                    {/* <ListItemText primary="Add Product" /> */}
-                    <Button 
+                    <Button
                         onClick={() => {
                             setAddProductModal(true)
                             setSignupModal(false)
