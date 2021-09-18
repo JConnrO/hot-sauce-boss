@@ -26,13 +26,13 @@ const resolvers = {
             return await Product.findById(_id).populate('category');
         },
         // STEPHEN WAS HERE!!! I'm still working on this 
-        // user: async (parent, args, context) => {
-        //     if (context.user) {
-        //         const userLogin = await User.findById(context.user._id).populate({
+        user: async (parent, args, context) => {
+            if (context.user) {
+                const userLogin = await User.findById(context.user._id).populate({
 
-        //         })
-        //     }
-        //}
+                })
+            }
+        }
     }
 };
 
