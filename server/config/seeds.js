@@ -63,6 +63,24 @@ db.once('open', async () => {
       quantity: 100
     },
     
+    {
+      name: 'Franks Redhot Sauce',
+      category: categories[0]._id,
+      description:
+        'Franks redhot chilli hotsauce queen naija cayenne pepper',
+      image: 'camera.jpg',
+      price: 29.99,
+      quantity: 30
+    },
+    {
+      name: 'Tapatio Hot Sauce',
+      category: categories[4]._id,
+      description:
+        'This is an old favourite. Tapatios major asset is the absence of vinegar in the recipe which promises genuine pepper flavours. Have a try! learn more',
+      image: 'tablet.jpg',
+      price: 79.99,
+      quantity: 50
+    },
     
   ]);
 
