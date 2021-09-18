@@ -62,7 +62,7 @@ db.once('open', async () => {
       price: 14.99,
       quantity: 100
     },
-    
+
     {
       name: 'Franks Redhot Sauce',
       category: categories[0]._id,
@@ -106,25 +106,26 @@ db.once('open', async () => {
       image: 'jolokia.jpeg',
       price: 17.99,
       quantity: 1000
-    } 
+    }
   ]);
 
   console.log('products seeded');
 
   await User.deleteMany();
 
-  await User.create({
-    firstName: 'Pamela',
-    lastName: 'Washington',
-    email: 'pamela@testmail.com',
-    password: 'password12345',
-  });
+  // await User.create({
+  //   firstName: 'Pamela',
+  //   lastName: 'Washington',
+  //   email: 'pamela@testmail.com',
+  //   password: 'password12345',
+  // });
 
+  // UPDATED USER CREATION
   await User.create({
-    firstName: 'Elijah',
-    lastName: 'Holt',
-    email: 'eholt@testmail.com',
-    password: 'password12345'
+    name: 'user1234',
+    // email: 'eholt@testmail.com',
+    password: 'password12345',
+    products: [{ _id: "61462127a86242f1c0db08b9" }, { _id: "61462127a86242f1c0db08b8" }]
   });
 
   console.log('users seeded');

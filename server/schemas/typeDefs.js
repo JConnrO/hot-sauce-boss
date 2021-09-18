@@ -38,7 +38,7 @@ const typeDefs = gql`
     addUser(
       name: String!
       password: String!
-    ):
+    ): Auth
     addProduct(
       name: String!
       description: String!

@@ -14,12 +14,12 @@ const userSchema = new Schema({
         required: true,
         minlength: 5
     },
-    // Hot Sauce reaction... NEEDS ATTENTION 
-    hotSauce: {
+    //Make a list of heat sigs, link to the specific ID
+    products: [{
         type: Schema.Types.ObjectId,
-        ref: 'Hot Sauce',
-        required: true
-    }
+        ref: 'Products',
+        required: false
+    }]
 });
 
 //Pre-saves the middleware to create the user password
@@ -40,3 +40,7 @@ userSchema.methods.isCorrectPassword = async function (password) {
 const User = mongoose.model('User', userSchema)
 
 module.exports = User;
+
+//create hot sauce -can choose label
+//User - main sauces
+//created on user side, link by typing in name
