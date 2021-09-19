@@ -29,17 +29,22 @@ const resolvers = {
             return await User.find(user => user.id === args.id)
         },
         users: async () => {
+            // if (!user) throw new AuthenticationError('you must be logged in');
             return await User.find()
         }
     },
-
+    //Checks if user exists
+    //throw error if exists
+    //User authentication
     Mutation: {
+        //Adds user
         addUser: async (parent, args) => {
             const userName = await User.create(args);
             const token = signToken(userName);
 
             return { token, userName };
         },
+        //Logs user in 
         login: async (parent, { email, password }) => {
             const userName = await User.findOne({ email });
 
@@ -93,7 +98,5 @@ const resolvers = {
 
 module.exports = resolvers;
 
-//Checks if user exists
-//throw error if exists
-//User authentication
+
 
