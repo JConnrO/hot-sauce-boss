@@ -2,18 +2,25 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
 const bcrypt = require("bcrypt");
+var uniqueValidator = require('mongoose-unique-validator');
 
 const userSchema = new Schema({
     name: {
         type: String,
         required: true,
-        trim: true
+        trim: true,
+        unique: true
     },
     password: {
         type: String,
         required: true,
         minlength: 5
     },
+    // email: {
+    //     type: String,
+    //     required: true,
+    //     unique: true
+    // },
     //Make a list of heat sigs, link to the specific ID
     products: [{
         type: Schema.Types.ObjectId,
@@ -38,6 +45,8 @@ userSchema.methods.isCorrectPassword = async function (password) {
 };
 
 const User = mongoose.model('User', userSchema)
+
+userSchema.plugin(uniqueValidator);
 
 module.exports = User;
 
