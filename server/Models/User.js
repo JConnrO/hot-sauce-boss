@@ -16,11 +16,6 @@ const userSchema = new Schema({
         required: true,
         minlength: 5
     },
-    // email: {
-    //     type: String,
-    //     required: true,
-    //     unique: true
-    // },
     //Make a list of heat sigs, link to the specific ID
     products: [{
         type: Schema.Types.ObjectId,
