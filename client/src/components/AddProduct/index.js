@@ -1,4 +1,5 @@
 import React from 'react';
+
 import Grid from '@mui/material/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import Box from '@mui/material/Box';
@@ -41,7 +42,7 @@ const AddProduct = () => {
                 top: '50%',
                 left: '50%',
                 transform: 'translate(-50%, -50%)',
-                width: 400,
+                width: 800,
                 border: '2px solid #000',
                 boxShadow: 24,
                 pt: 2,
