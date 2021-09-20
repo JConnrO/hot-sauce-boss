@@ -100,10 +100,6 @@ export default function MenuDrawer() {
                 </StyledMenuItem>
 
                 <StyledMenuItem>
-                    <ListItemText primary="Create Shop" />
-                </StyledMenuItem>
-
-                <StyledMenuItem>
                     <Button
                         onClick={() => {
                             setAddProductModal(true)
