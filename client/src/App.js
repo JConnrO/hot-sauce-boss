@@ -1,5 +1,6 @@
 import React from 'react';
 import Nav from './components/Nav';
+import Product from './components/Product';
 import './App.css';
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -25,6 +26,9 @@ function App() {
 
           </Switch>
         </div>
+        <Product>
+
+        </Product>
       </Router>
     </ApolloProvider >
   );
