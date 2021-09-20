@@ -32,7 +32,6 @@ export const ADD_PRODUCT = gql`
       addProduct {
         name
         description
-        image
         quantity 
         price
       }
@@ -48,7 +47,6 @@ export const UPDATE_PRODUCT = gql`
       addProduct {
         name
         description
-        image
         quantity 
         price
       }
@@ -64,7 +62,6 @@ export const REMOVE_PRODUCT = gql`
       addProduct {
         name
         description
-        image
         quantity 
         price
       }

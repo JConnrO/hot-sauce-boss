@@ -4,7 +4,6 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import Button from '@mui/material/Button';
-import Userform from "../Userform"
 import TextField from '@mui/material/TextField';
 
 import { useMutation } from '@apollo/client';
@@ -39,19 +38,9 @@ const Login = () => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
         console.log({
-            email: data.get('name'),
+            name: data.get('name'),
             password: data.get('password'),
         });
-
-
-        // const handleSubmit = (event) => {
-        //     event.preventDefault();
-        //     const data = new FormData(event.currentTarget);
-        //     console.log({
-        //         email: data.get('email'),
-        //         password: data.get('password'),
-        //     });
-        // };
 
         // check if form has everything (as per react-bootstrap docs)
         const form = event.currentTarget;
@@ -74,8 +63,7 @@ const Login = () => {
         }
 
         setUserFormData({
-            username: '',
-            email: '',
+            name: '',
             password: '',
         });
     };
