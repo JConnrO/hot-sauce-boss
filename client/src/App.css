@@ -21,4 +21,11 @@
 
 .sauce-card {
     padding: 10px 10px 10px 10px;
+    color: #FF9770;
+    background-color: #FF9770;
+}
+
+.fullCard {
+  color: #FFD670;
+  background-color: #FF70A6;
 }

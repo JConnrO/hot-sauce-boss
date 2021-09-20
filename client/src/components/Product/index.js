@@ -70,7 +70,7 @@ const Product = (props) => {
             <div className="flex-row">
                 {hotsauces.map((hotsauce) => (
                     <div class="sauce-card">
-                        <Card sx={{ maxWidth: 345 }}>
+                        <Card class='fullCard' sx={{ maxWidth: '15%' }}>
                             <CardMedia
                                 component="img"
                                 height="140"
