@@ -23,3 +23,19 @@ export const ADD_USER = gql`
     }
   }
 `;
+
+export const ADD_PRODUCT = gql`
+  mutation addProduct($productData: productInput!) {
+    addProduct(productData: $productData) {
+      _id
+      name
+      addProduct {
+        name
+        description
+        image
+        quantity 
+        price
+      }
+    }
+  }
+`;
