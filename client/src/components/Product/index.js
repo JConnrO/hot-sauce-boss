@@ -66,29 +66,31 @@ const Product = (props) => {
 
     return (
         <section>
-            <h1 id="portfolio">Portfolio</h1>
+            <h1 id="hotsauce">Sauces</h1>
             <div className="flex-row">
                 {hotsauces.map((hotsauce) => (
-                    <Card sx={{ maxWidth: 345 }}>
-                        <CardMedia
-                            component="img"
-                            height="140"
-                            image={hotsauce.image}
-                            alt={hotsauce.name}
-                        />
-                        <CardContent>
-                            <Typography gutterBottom variant="h5" component="div">
-                                {hotsauce.name}
-                            </Typography>
-                            <Typography variant="body2" color="text.secondary">
-                                {hotsauce.description}
-                            </Typography>
-                        </CardContent>
-                        <CardActions>
-                            <Button size="small">Edit</Button>
-                            <Button size="small">Delete</Button>
-                        </CardActions>
-                    </Card>
+                    <div class="sauce-card">
+                        <Card sx={{ maxWidth: 345 }}>
+                            <CardMedia
+                                component="img"
+                                height="140"
+                                image={hotsauce.image}
+                                alt={hotsauce.name}
+                            />
+                            <CardContent>
+                                <Typography gutterBottom variant="h5" component="div">
+                                    {hotsauce.name}
+                                </Typography>
+                                <Typography variant="body2" color="text.secondary">
+                                    {hotsauce.description}
+                                </Typography>
+                            </CardContent>
+                            <CardActions>
+                                <Button size="small">Edit</Button>
+                                <Button size="small">Delete</Button>
+                            </CardActions>
+                        </Card>
+                    </div>
                 ))}
             </div>
         </section>

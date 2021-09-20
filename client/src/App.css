@@ -13,3 +13,12 @@
   color: white;
 }
 
+.flex-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.sauce-card {
+    padding: 10px 10px 10px 10px;
+}
