@@ -35,6 +35,7 @@ const Signup = () => {
     useEffect(() => {
         if (error) {
             setShowAlert(true)
+            console.log ("mutation error")
         } else {
             setShowAlert(false)
         }
@@ -46,7 +47,12 @@ const Signup = () => {
     };
 
     const handleFormSubmit = async (event) => {
-        event.preventDefault();
+        event.preventDefault()
+        const data = new FormData(event.currentTarget);
+        console.log({
+            name: data.get('name'),
+            password: data.get('password'),
+        });;
 
         // check if form has everything (as per react-bootstrap docs)
         const form = event.currentTarget;
@@ -58,7 +64,6 @@ const Signup = () => {
         try {
 
             // update for mutation
-
             const { data } = await addUser({
                 variables: { ...userFormData }
             });
