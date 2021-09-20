@@ -1,5 +1,5 @@
 import React from 'react';
-import Project from '../Project';
+import Product from '../Product';
 
 function Shop(props) {
 
@@ -55,7 +55,7 @@ function Shop(props) {
             <h1 id="portfolio">Portfolio</h1>
             <div className="flex-row">
                 {photos.map((project) => (
-                    <Project
+                    <Product
                         image={project.image}
                         title={project.name}
                         description={project.description}
