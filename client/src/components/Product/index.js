@@ -62,15 +62,87 @@ const Product = (props) => {
             quantity: "1",
             price: "1.99"
         },
+        {
+            name: "Franks Red",
+            description: "Frank's Red",
+            image: franks,
+            quantity: "1",
+            price: "1.99"
+        },
+        {
+            name: "Cholula",
+            description: "Cholula1",
+            image: cholula,
+            quantity: "1",
+            price: "1.99"
+
+        },
+        {
+            name: "Jolokia",
+            description: "Jolokia",
+            image: jolokia,
+            quantity: "1",
+            price: "1.99"
+        },
+        {
+            name: "Louisiana",
+            description: "Louisiana",
+            image: louisiana,
+            quantity: "1",
+            price: "1.99"
+        },
+        {
+            name: "Hoffs",
+            description: "Hoffs",
+            image: hoffs,
+            quantity: "1",
+            price: "1.99"
+        },
+        {
+            name: "Franks Red",
+            description: "Frank's Red",
+            image: franks,
+            quantity: "1",
+            price: "1.99"
+        },
+        {
+            name: "Cholula",
+            description: "Cholula1",
+            image: cholula,
+            quantity: "1",
+            price: "1.99"
+
+        },
+        {
+            name: "Jolokia",
+            description: "Jolokia",
+            image: jolokia,
+            quantity: "1",
+            price: "1.99"
+        },
+        {
+            name: "Louisiana",
+            description: "Louisiana",
+            image: louisiana,
+            quantity: "1",
+            price: "1.99"
+        },
+        {
+            name: "Hoffs",
+            description: "Hoffs",
+            image: hoffs,
+            quantity: "1",
+            price: "1.99"
+        },
     ]
 
     return (
         <section>
             <h1 id="hotsauce">Sauces</h1>
-            <div className="flex-row">
+            <div className="flex-row" id="hot-sauce">
                 {hotsauces.map((hotsauce) => (
                     <div class="sauce-card">
-                        <Card class='fullCard' sx={{ maxWidth: '15%' }}>
+                        <Card class='fullCard' sx={{ width: '95%' }}>
                             <CardMedia
                                 component="img"
                                 height="140"
