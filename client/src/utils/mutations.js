@@ -55,3 +55,19 @@ export const UPDATE_PRODUCT = gql`
     }
   }
 `;
+
+export const REMOVE_PRODUCT = gql`
+  mutation removeProduct($productId: ID!) {
+    deleteProduct(productId: $productId) {
+      _id
+      name
+      addProduct {
+        name
+        description
+        image
+        quantity 
+        price
+      }
+    }
+  }
+`;
