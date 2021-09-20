@@ -39,3 +39,19 @@ export const ADD_PRODUCT = gql`
     }
   }
 `;
+
+export const UPDATE_PRODUCT = gql`
+  mutation updateProduct($productData: productInput!) {
+    updateProduct(productData: $productData) {
+      _id
+      name
+      addProduct {
+        name
+        description
+        image
+        quantity 
+        price
+      }
+    }
+  }
+`;
