@@ -3,7 +3,7 @@ const { gql } = require("apollo-server-express");
 const typeDefs = gql`
   type Category {
     _id: ID
-    name: String
+    name: Int
   }
 
   type Product {
@@ -49,6 +49,7 @@ const typeDefs = gql`
       description: String!
       price: Float!
       quantity: Int!
+      category: Int
     ): Product
     updateProduct(_id: ID!, productInput: ProductInput): Product
     login(email: String!, password: String!): Auth
