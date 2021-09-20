@@ -10,6 +10,13 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
+import cholula from '../../../public/images/cholula.jpeg'
+import franks from '../../../public/images/franks.jpeg'
+import hoffs from '../../../public/images/hoffs.jpeg'
+import jolokia from '../../../public/images/jolokia.jpeg'
+import louisiana from '../../../public/images/louisiana.jpeg'
+
+
 const Product = (props) => {
     // input ProductInput {
     //     name: String
@@ -22,46 +29,39 @@ const Product = (props) => {
         {
             name: "Franks Red",
             description: "Frank's Red Hot Sauce",
-            image: "0",
+            image: franks,
             quantity: "1",
             price: "1.99"
         },
         {
             name: "Cholula",
             description: "Cholula1",
-            image: "0",
+            image: cholula,
             quantity: "1",
             price: "1.99"
 
         },
         {
-            name: "Tabasco",
-            description: "Tabasco1",
-            image: "0",
+            name: "Jolokia",
+            description: "Jolokia",
+            image: jolokia,
             quantity: "1",
             price: "1.99"
         },
         {
-            name: "Mule Sauce",
-            description: "Mule Sauce1",
-            image: "0",
+            name: "Louisiana",
+            description: "Louisiana",
+            image: louisiana,
             quantity: "1",
             price: "1.99"
         },
         {
-            name: "Hot Ones: The Last Dab XXX",
-            description: "Hot Ones: The Last Dab XXX1",
-            image: "0",
+            name: "Hoffs",
+            description: "Hoffs",
+            image: hoffs,
             quantity: "1",
             price: "1.99"
         },
-        {
-            name: "Hot Ones - Los Calientes",
-            description: "Hot Ones - Los Calientes1",
-            image: "0",
-            quantity: "1",
-            price: "1.99"
-        }
     ]
 
     return (
