@@ -8,6 +8,7 @@ import Modal from '@mui/material/Modal';
 import Login from '../Login/index';
 import Signup from '../Signup/index';
 import AddProduct from '../AddProduct/index';
+import EditProduct from '../EditProduct/index';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 
@@ -100,7 +101,12 @@ export default function MenuDrawer() {
                 </StyledMenuItem>
 
                 <StyledMenuItem>
-                    <ListItemText primary="Create Shop" />
+                    <Button
+                        onClick={() => {
+                            setAddProductModal(true)
+                            setSignupModal(false)
+                            setLoginModal(false)
+                        }}>Add Product</Button>
                 </StyledMenuItem>
 
                 <StyledMenuItem>
@@ -109,7 +115,7 @@ export default function MenuDrawer() {
                             setAddProductModal(true)
                             setSignupModal(false)
                             setLoginModal(false)
-                        }}>Add Product</Button>
+                        }}>Edit Product</Button>
                 </StyledMenuItem>
 
             </StyledMenu>
