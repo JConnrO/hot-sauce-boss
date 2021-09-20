@@ -43,7 +43,7 @@ const typeDefs = gql`
     price: Float
   }
   type Mutation {
-    addUser(name: String!, password: String!): User
+    addUser(name: String!, password: String!): Auth
     addProduct(
       name: String!
       description: String!

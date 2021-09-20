@@ -45,8 +45,8 @@ const resolvers = {
       return { token, userName };
     },
     //Logs user in
-    login: async (parent, { email, password }) => {
-      const userName = await User.findOne({ email });
+    login: async (parent, { name, password }) => {
+      const userName = await User.findOne({ name });
 
       if (!userName) {
         throw new AuthenticationError("Invalid user!");
