@@ -10,11 +10,11 @@ const Userform = () => {
                 <TextField
                     margin="normal"
                     required
-                    id="username"
-                    label="Username"
-                    name="username"
+                    id="name"
+                    label="Name"
+                    name="name"
                     size="small"
-                    autoComplete="username"
+                    autoComplete="name"
                     autoFocus
                 />
                 <TextField
