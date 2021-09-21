@@ -16,6 +16,8 @@ import hoffs from '../../assets/hotsauce/hoffs.jpeg'
 import jolokia from '../../assets/hotsauce/jolokia.jpeg'
 import louisiana from '../../assets/hotsauce/louisiana.jpeg'
 
+import EditProduct from '../EditProduct/index';
+import Modal from '@mui/material/Modal';
 
 const Product = (props) => {
     // input ProductInput {
@@ -136,6 +138,10 @@ const Product = (props) => {
         },
     ]
 
+    const [open, setOpen] = React.useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
+
     return (
         <section>
             <h1 id="hotsauce">Sauces</h1>
@@ -158,13 +164,25 @@ const Product = (props) => {
                                 </Typography>
                             </CardContent>
                             <CardActions>
-                                <Button size="small">Edit</Button>
+                                
+                                <Button
+                                    onClick={handleOpen}>Edit</Button>
                                 <Button size="small">Delete</Button>
                             </CardActions>
                         </Card>
                     </div>
                 ))}
             </div>
+
+            <Modal
+                style={{
+                    position: "static"
+                }}
+                open={open}
+                onClose={handleClose}
+                aria-labelledby='editproduct-modal'>
+                <EditProduct></EditProduct>
+            </Modal>
         </section>
     );
 }
