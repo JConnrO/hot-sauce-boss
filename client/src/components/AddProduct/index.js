@@ -135,38 +135,6 @@ const AddProduct = () => {
 
             </Grid>
 
-            <Grid container alignItems="center" justifyContent="center" flexDirection="row">
-
-
-                {/* <TextField
-                    id="outlined-number"
-                    // id="number"
-                    label="Quantity"
-                    type="number"
-                    inputProps={{ min: 0 }}
-                    InputLabelProps={{
-                        shrink: true,
-                    }}
-                    onChange={handleInputChange}
-                    value={productFormData.quantity}
-                /> */}
-{/* 
-                <FormControl fullWidth sx={{ m: 1 }}>
-                    <InputLabel htmlFor="outlined-adornment-amount">Price</InputLabel>
-                    <OutlinedInput
-                        id="outlined-adornment-amount"
-                        // value={values.amount}
-                        // onChange={handleChange('amount')}
-                        startAdornment={<InputAdornment position="start">$</InputAdornment>}
-                        label="Price"
-                        size="small"
-                        onChange={handleInputChange}
-                        value={productFormData.amount}
-                    />
-                </FormControl> */}
-
-            </Grid>
-
             <Grid container alignItems="center" justifyContent="center">
                 <Button
                     type="submit"

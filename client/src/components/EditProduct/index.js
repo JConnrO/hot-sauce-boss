@@ -1,10 +1,9 @@
 import React from 'react';
-
 import Grid from '@mui/material/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import ProductForm from "../ProductForm"
+import TextField from '@mui/material/TextField';
 
 const useStyles = makeStyles(theme => ({
     coolers: {
@@ -50,7 +49,34 @@ const EditProduct = () => {
                 pb: 3,
             }}
         >
-            <ProductForm></ProductForm>
+            <Grid container alignItems="center" justifyContent="center" flexDirection="row">
+
+                <TextField
+                    margin="normal"
+                    required
+                    id="name"
+                    label="Name"
+                    name="name"
+                    size="small"
+                    autoComplete="name"
+                    autoFocus
+                />
+
+            </Grid>
+
+            <Grid container alignItems="center" justifyContent="center" >
+
+                <TextField
+                    id="outlined-multiline-static"
+                    multiline
+                    rows={4}
+                    required
+                    name="description"
+                    label="Description"
+                    type="description"
+                />
+
+            </Grid>
 
             <Grid container alignItems="center" justifyContent="center">
                 <Button
