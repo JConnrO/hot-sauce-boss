@@ -1,11 +1,12 @@
 // import React, { useState, useEffect } from 'react';
-import React, { useState} from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
-
+import IconButton from '@mui/material/IconButton';
+import CloseIcon from '@material-ui/icons/Close';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../../utils/mutations';
 import Auth from '../../utils/auth';
@@ -20,7 +21,7 @@ const useStyles = makeStyles(theme => ({
     }
 }))
 
-const Signup = () => {
+const Signup = ({ handleModalClose }) => {
 
     const classes = useStyles();
 
@@ -104,6 +105,13 @@ const Signup = () => {
                 pb: 3,
             }}
         >
+
+            <Grid>
+                <IconButton onClick={handleModalClose} alignItems="center">
+                    <CloseIcon />
+                </IconButton>
+            </Grid>
+
             <Grid container alignItems="center" justifyContent="center" flexDirection="column">
                 <TextField
                     margin="normal"

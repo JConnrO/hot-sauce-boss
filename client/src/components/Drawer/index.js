@@ -111,7 +111,9 @@ export default function MenuDrawer() {
 
             <Modal
                 style={{
-                    position: "static"
+                    position: "static", 
+                    width: "1000px", 
+                    height: "1000px"
                 }}
                 open={loginModal}
                 onClose={() => setLoginModal(false)}
