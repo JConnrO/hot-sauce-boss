@@ -1,0 +1,36 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.flex-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.sauce-card {
+    padding: 25px 10px;
+    color: #FF9770;
+    background-color: #FF9770;
+    width: 15rem;
+}
+
+.fullCard {
+  color: #FFD670;
+  background-color: #FF70A6;
+}
+
+Footer{
+
+}
