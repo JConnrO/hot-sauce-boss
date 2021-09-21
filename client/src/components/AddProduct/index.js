@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import Grid from '@mui/material/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import Box from '@mui/material/Box';
@@ -27,7 +27,7 @@ const AddProduct = () => {
     const classes = useStyles();
 
     // set initial form state
-    const [productFormData, setProductFormData] = useState({ name: '', decription: '', quantity: '', price: '' });
+    const [productFormData, setProductFormData] = useState({ name: '', description: '' });
     // set state for form validation
     const [validated] = useState(false);
     // set state for alert
@@ -46,9 +46,9 @@ const AddProduct = () => {
         console.log({
             name: data.get('name'),
             description: data.get('description'),
-            quantity: data.get('quantity'),
-            price: data.get('price')
-        });;
+            // number: data.get('number'),
+            // amount: data.get('amount')
+        });
 
         // check if form has everything (as per react-bootstrap docs)
         const form = event.currentTarget;
@@ -75,8 +75,8 @@ const AddProduct = () => {
         setProductFormData({
             name: '',
             description: '',
-            quantity: '',
-            price: ''
+            // number: '',
+            // amount: ''
         });
     };
 
@@ -103,14 +103,15 @@ const AddProduct = () => {
             }}
         >
             <Grid container alignItems="center" justifyContent="center" flexDirection="row">
+
                 <TextField
                     margin="normal"
                     required
-                    id="productname"
-                    label="Product Name"
-                    name="productname"
+                    id="name"
+                    label="Name"
+                    name="name"
                     size="small"
-                    autoComplete="productname"
+                    autoComplete="name"
                     autoFocus
                     onChange={handleInputChange}
                     value={productFormData.name}
@@ -137,7 +138,7 @@ const AddProduct = () => {
             <Grid container alignItems="center" justifyContent="center" flexDirection="row">
 
 
-                <TextField
+                {/* <TextField
                     id="outlined-number"
                     // id="number"
                     label="Quantity"
@@ -148,8 +149,8 @@ const AddProduct = () => {
                     }}
                     onChange={handleInputChange}
                     value={productFormData.quantity}
-                />
-
+                /> */}
+{/* 
                 <FormControl fullWidth sx={{ m: 1 }}>
                     <InputLabel htmlFor="outlined-adornment-amount">Price</InputLabel>
                     <OutlinedInput
@@ -160,9 +161,9 @@ const AddProduct = () => {
                         label="Price"
                         size="small"
                         onChange={handleInputChange}
-                        value={productFormData.price}
+                        value={productFormData.amount}
                     />
-                </FormControl>
+                </FormControl> */}
 
             </Grid>
 

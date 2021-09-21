@@ -32,8 +32,7 @@ export const ADD_PRODUCT = gql`
       addProduct {
         name
         description
-        quantity 
-        price
+   
       }
     }
   }
