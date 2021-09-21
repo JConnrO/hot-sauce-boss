@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+// import React, { useState, useEffect } from 'react';
+import React, { useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
@@ -26,19 +27,19 @@ const Signup = () => {
     // set initial form state
     const [userFormData, setUserFormData] = useState({ name: '', password: '' });
     // set state for form validation
-    const [validated] = useState(false);
+    // const [validated] = useState(false);
     // set state for alert
-    const [showAlert, setShowAlert] = useState(false);
+    // const [showAlert, setShowAlert] = useState(false);
 
     // check error 
-    const [addUser, { error }] = useMutation(ADD_USER);
-    useEffect(() => {
-        if (error) {
-            setShowAlert(true)
-        } else {
-            setShowAlert(false)
-        }
-    }, [error])
+    const [addUser] = useMutation(ADD_USER);
+    // useEffect(() => {
+    //     if (error) {
+    //         setShowAlert(true)
+    //     } else {
+    //         setShowAlert(false)
+    //     }
+    // }, [error])
 
     const handleInputChange = (event) => {
         const { name, value } = event.target;
@@ -72,7 +73,7 @@ const Signup = () => {
 
         } catch (err) {
             console.error(err);
-            setShowAlert(true);
+            // setShowAlert(true);
         }
 
         setUserFormData({

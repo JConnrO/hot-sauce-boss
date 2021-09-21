@@ -24,8 +24,8 @@ const Login = () => {
     const classes = useStyles();
 
     const [userFormData, setUserFormData] = useState({ name: '', password: '' });
-    const [validated] = useState(false);
-    const [showAlert, setShowAlert] = useState(false);
+    // const [validated] = useState(false);
+    // const [showAlert, setShowAlert] = useState(false);
 
     const [loginUser] = useMutation(LOGIN_USER);
 
@@ -59,7 +59,7 @@ const Login = () => {
 
         } catch (err) {
             console.error(err);
-            setShowAlert(true);
+            // setShowAlert(true);
         }
 
         setUserFormData({

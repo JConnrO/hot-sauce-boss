@@ -7,7 +7,6 @@ import Modal from '@mui/material/Modal';
 import Login from '../Login/index';
 import Signup from '../Signup/index';
 import AddProduct from '../AddProduct/index';
-import EditProduct from '../EditProduct/index';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 

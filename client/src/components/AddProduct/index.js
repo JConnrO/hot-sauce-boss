@@ -4,10 +4,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
-import OutlinedInput from '@mui/material/OutlinedInput';
-import InputLabel from '@mui/material/InputLabel';
-import InputAdornment from '@mui/material/InputAdornment';
-import FormControl from '@mui/material/FormControl';
 
 import { useMutation } from '@apollo/client';
 import { ADD_PRODUCT } from '../../utils/mutations';
@@ -29,11 +25,11 @@ const AddProduct = () => {
     // set initial form state
     const [productFormData, setProductFormData] = useState({ name: '', description: '' });
     // set state for form validation
-    const [validated] = useState(false);
+    // const [validated] = useState(false);
     // set state for alert
-    const [showAlert, setShowAlert] = useState(false);
+    // const [showAlert, setShowAlert] = useState(false);
 
-    const [addProduct, { error }] = useMutation(ADD_PRODUCT);
+    const [addProduct] = useMutation(ADD_PRODUCT);
 
     const handleInputChange = (event) => {
         const { name, value } = event.target;
@@ -69,7 +65,7 @@ const AddProduct = () => {
 
         } catch (err) {
             console.error(err);
-            setShowAlert(true);
+            // setShowAlert(true);
         }
 
         setProductFormData({
