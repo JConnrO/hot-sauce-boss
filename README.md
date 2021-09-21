@@ -42,28 +42,27 @@ Always remember for every meal, the sauce is the boss!
 
 ### Landing Page:
 
-When the user first enters the website, they are presented with the landing page.
+When the user first enters the website, they are presented with the hot sauce dashboard.
 
+
+![Screenshot]()
+
+### Sign-up Page:
+ 
+Upon clicking sign-up, the user is brought to the user sign-up page. Once the user creates a new account they will be able to post their own collection of hot sauces.
 
 ![Screenshot]()
 
 ### Login Page:
- 
-Upon clicking login the user is brought to the login/create account page. Once the user creates an account they will be able to access their recipes.
+
+On the login page, the user is able to login if they sign out manually or are disconnect from wifi.
 
 
 ![Screenshot]()
 
-### Create Post Page:
+### Add Product Page:
 
-On the recipe creation page, the user is presented with the 'Create New Post' card and their post dashboard, with options to delete or edit their posts.
-
-
-![Screenshot]()
-
-### Create Post Page (with input text):
-
-The user must enter in a title, youtube link, and a description to be able to post.
+The user must enter in a title, 
 
 
 ![Screenshot]()
