@@ -35,7 +35,6 @@ const Signup = () => {
     useEffect(() => {
         if (error) {
             setShowAlert(true)
-            console.log ("mutation error")
         } else {
             setShowAlert(false)
         }
@@ -81,15 +80,6 @@ const Signup = () => {
             password: '',
         });
     };
-
-    // const handleSubmit = (event) => {
-    //     event.preventDefault();
-    //     const data = new FormData(event.currentTarget);
-    //     console.log({
-    //         name: data.get('name'),
-    //         password: data.get('password'),
-    //     });
-    // };
 
     return (
         <Box component="form"

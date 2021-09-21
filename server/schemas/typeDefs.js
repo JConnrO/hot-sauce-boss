@@ -43,16 +43,14 @@ const typeDefs = gql`
     price: Float
   }
   type Mutation {
-    addUser(name: String!, password: String!): User
+    addUser(name: String!, password: String!): Auth
     addProduct(
       name: String!
       description: String!
-      price: Float!
-      quantity: Int!
-      category: Int
     ): Product
     updateProduct(_id: ID!, productInput: ProductInput): Product
     login(name: String!, password: String!): Auth
+    deleteProduct(_id: ID!): Product
   }
 `;
 module.exports = typeDefs;
