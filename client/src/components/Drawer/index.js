@@ -48,6 +48,7 @@ export default function MenuDrawer() {
     const [loginModal, setLoginModal] = useState(false);
     const [signupModal, setSignupModal] = useState(false);
     const [addProductModal, setAddProductModal] = useState(false);
+    const [editProductModal, setEditProductModal] = useState(false);
 
     const [anchorEl, setAnchorEl] = React.useState(null);
 
@@ -85,6 +86,7 @@ export default function MenuDrawer() {
                             setLoginModal(true)
                             setSignupModal(false)
                             setAddProductModal(false)
+                            setEditProductModal(false)
                         }}>Login
                     </Button>
 
@@ -96,6 +98,7 @@ export default function MenuDrawer() {
                             setSignupModal(true)
                             setLoginModal(false)
                             setAddProductModal(false)
+                            setEditProductModal(false)
                         }}>Sign Up</Button>
 
                 </StyledMenuItem>
@@ -106,13 +109,15 @@ export default function MenuDrawer() {
                             setAddProductModal(true)
                             setSignupModal(false)
                             setLoginModal(false)
+                            setEditProductModal(false)
                         }}>Add Product</Button>
                 </StyledMenuItem>
 
                 <StyledMenuItem>
                     <Button
                         onClick={() => {
-                            setAddProductModal(true)
+                            setEditProductModal(true)
+                            setAddProductModal(false)
                             setSignupModal(false)
                             setLoginModal(false)
                         }}>Edit Product</Button>
@@ -148,6 +153,16 @@ export default function MenuDrawer() {
                 onClose={() => setAddProductModal(false)}
                 aria-labelledby='addproduct-modal'>
                 <AddProduct handleModalClose={() => setAddProductModal(false)}></AddProduct>
+            </Modal>
+
+            <Modal
+                style={{
+                    position: "static"
+                }}
+                open={editProductModal}
+                onClose={() => setEditProductModal(false)}
+                aria-labelledby='editproduct-modal'>
+                <EditProduct handleModalClose={() => setEditProductModal(false)}></EditProduct>
             </Modal>
 
         </div>

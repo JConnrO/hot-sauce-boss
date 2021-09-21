@@ -1,10 +1,17 @@
-import React from 'react';
-
+import React, { useState } from 'react';
 import Grid from '@mui/material/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import ProductForm from "../ProductForm"
+import TextField from '@mui/material/TextField';
+import OutlinedInput from '@mui/material/OutlinedInput';
+import InputLabel from '@mui/material/InputLabel';
+import InputAdornment from '@mui/material/InputAdornment';
+import FormControl from '@mui/material/FormControl';
+
+import { useMutation } from '@apollo/client';
+import { ADD_PRODUCT } from '../../utils/mutations';
+import Auth from '../../utils/auth';
 
 const useStyles = makeStyles(theme => ({
     coolers: {
@@ -19,18 +26,63 @@ const AddProduct = () => {
 
     const classes = useStyles();
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
+    // set initial form state
+    const [productFormData, setProductFormData] = useState({ name: '', description: '' });
+    // set state for form validation
+    const [validated] = useState(false);
+    // set state for alert
+    const [showAlert, setShowAlert] = useState(false);
+
+    const [addProduct, { error }] = useMutation(ADD_PRODUCT);
+
+    const handleInputChange = (event) => {
+        const { name, value } = event.target;
+        setProductFormData({ ...productFormData, [name]: value });
+    };
+
+    const handleFormSubmit = async (event) => {
+        event.preventDefault()
         const data = new FormData(event.currentTarget);
         console.log({
-            email: data.get('email'),
-            password: data.get('password'),
+            name: data.get('name'),
+            description: data.get('description'),
+            // number: data.get('number'),
+            // amount: data.get('amount')
+        });
+
+        // check if form has everything (as per react-bootstrap docs)
+        const form = event.currentTarget;
+        if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+
+        try {
+
+            // update for mutation
+            const { data } = await addProduct({
+                variables: { ...productFormData }
+            });
+
+            // update auth 
+            Auth.login(data.addProduct.token);
+
+        } catch (err) {
+            console.error(err);
+            setShowAlert(true);
+        }
+
+        setProductFormData({
+            name: '',
+            description: '',
+            // number: '',
+            // amount: ''
         });
     };
 
     return (
         <Box component="form"
-            onSubmit={handleSubmit}
+            onSubmit={handleFormSubmit}
             noValidate sx={{ mt: 1 }}
             alignContent="center"
             alignItems="center"
@@ -50,7 +102,38 @@ const AddProduct = () => {
                 pb: 3,
             }}
         >
-            <ProductForm></ProductForm>
+            <Grid container alignItems="center" justifyContent="center" flexDirection="row">
+
+                <TextField
+                    margin="normal"
+                    required
+                    id="name"
+                    label="Name"
+                    name="name"
+                    size="small"
+                    autoComplete="name"
+                    autoFocus
+                    onChange={handleInputChange}
+                    value={productFormData.name}
+                />
+
+            </Grid>
+
+            <Grid container alignItems="center" justifyContent="center" >
+
+                <TextField
+                    id="outlined-multiline-static"
+                    multiline
+                    rows={4}
+                    required
+                    name="description"
+                    label="Description"
+                    type="description"
+                    onChange={handleInputChange}
+                    value={productFormData.description}
+                />
+
+            </Grid>
 
             <Grid container alignItems="center" justifyContent="center">
                 <Button
@@ -59,7 +142,7 @@ const AddProduct = () => {
                     sx={{ mt: 3, mb: 2 }}
                     className={classes.coolers}
                 >
-                    Sign Up
+                    Add Product
                 </Button>
             </Grid>
         </Box >
