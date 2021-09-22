@@ -181,7 +181,7 @@ const Product = (props) => {
                 open={open}
                 onClose={handleClose}
                 aria-labelledby='editproduct-modal'>
-                <EditProduct></EditProduct>
+                <EditProduct handleClose={handleClose} ></EditProduct>
             </Modal>
         </section>
     );
