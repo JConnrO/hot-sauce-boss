@@ -14,6 +14,7 @@ function Sauce(props) {
     // Create a method 'removeFriend()' that takes in 'id' and filters through 'friendsList'
     // Update the state with the new friends list.
     const removeSauce = name => {
+      console.log("Delete Clicked");
       const newList = sauceList.filter(sauce => sauce.name !== name);
       setSauceList(newList);
     };
@@ -22,7 +23,7 @@ function Sauce(props) {
         <section>
             <h1 id="hotsauce">Sauces</h1>
             <div id="hotsauce" className="flex-row" id="hot-sauce">
-                {props.hotsauces.map((hotsauce) => (
+                {sauceList.map((hotsauce) => (
                     <div class="sauce-card">
                         <Card class='fullCard' sx={{ width: '95%' }}>
                             <CardMedia
