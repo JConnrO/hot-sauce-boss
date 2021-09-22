@@ -4,6 +4,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
+import IconButton from '@mui/material/IconButton';
+import CloseIcon from '@material-ui/icons/Close';
 
 const useStyles = makeStyles(theme => ({
     coolers: {
@@ -14,7 +16,7 @@ const useStyles = makeStyles(theme => ({
     }
 }))
 
-const EditProduct = () => {
+const EditProduct = ({handleClose}) => {
 
     const classes = useStyles();
 
@@ -49,6 +51,13 @@ const EditProduct = () => {
                 pb: 3,
             }}
         >
+
+            <Grid>
+                <IconButton onClick={handleClose}>
+                    <CloseIcon /> 
+                </IconButton>
+            </Grid>
+
             <Grid container alignItems="center" justifyContent="center" flexDirection="row">
 
                 <TextField

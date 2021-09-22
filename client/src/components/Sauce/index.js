@@ -18,7 +18,11 @@ function Sauce(props) {
       const newList = sauceList.filter(sauce => sauce.name !== name);
       setSauceList(newList);
     };
-    
+    const editSauce = name => {
+        console.log("Delete Clicked");
+        const newList = sauceList.filter(sauce => sauce.name !== name);
+        setSauceList(newList);
+    };
     return (
         <section>
             <h1 id="hotsauce">Sauces</h1>
@@ -42,7 +46,7 @@ function Sauce(props) {
                                 </Typography>
                             </CardContent>
                             <CardActions>
-                                <Button size="small">Edit</Button>
+                                <Button size="small" onClick={() => editSauce()}>Edit</Button>
                                 <Button size="small" onClick={() => removeSauce(hotsauce.name)}>Delete</Button>
                             </CardActions>
                         </Card>
