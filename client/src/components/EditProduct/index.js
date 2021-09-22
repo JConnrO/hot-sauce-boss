@@ -28,7 +28,7 @@ const EditProduct = ({handleClose}) => {
             password: data.get('password'),
         });
     };
-
+    
     return (
         <Box component="form"
             onSubmit={handleSubmit}
@@ -43,7 +43,8 @@ const EditProduct = ({handleClose}) => {
                 top: '50%',
                 left: '50%',
                 transform: 'translate(-50%, -50%)',
-                width: 800,
+                width: 400,
+                height: 300,
                 border: '2px solid #000',
                 boxShadow: 24,
                 pt: 2,
