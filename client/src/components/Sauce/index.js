@@ -19,7 +19,7 @@ function Sauce(props) {
       setSauceList(newList);
     };
     const editSauce = name => {
-        console.log("Delete Clicked");
+        console.log("Edit Clicked");
         const newList = sauceList.filter(sauce => sauce.name !== name);
         setSauceList(newList);
     };
@@ -28,14 +28,13 @@ function Sauce(props) {
             <h1 id="hotsauce">Sauces</h1>
             <div id="hotsauce" className="flex-row" id="hot-sauce">
                 {sauceList.map((hotsauce) => (
-                    <div class="sauce-card">
-                        <Card class='fullCard' sx={{ width: '95%' }}>
+                    <div className="sauce-card" key={hotsauce.name}>
+                        <Card className='fullCard' sx={{ width: '95%' }}>
                             <CardMedia
                                 component="img"
                                 height="140"
                                 image={hotsauce.image}
                                 alt={hotsauce.name}
-                                key={hotsauce.name}
                             />
                             <CardContent>
                                 <Typography gutterBottom variant="h5" component="div">

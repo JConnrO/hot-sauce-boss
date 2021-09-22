@@ -6,7 +6,9 @@ const useStyles = makeStyles((theme) => ({
     coolers: {
         backgroundColor: "#70D6FF", 
         paddingLeft: "30px",
-        alignItems: "center"
+        alignItems: "center",
+        marginTop: "25px",
+        bottom: "0"
     }, 
     title: {
         textAlign: "center"
@@ -49,7 +51,7 @@ const Footer = () => {
 
             </Grid>
         </footer >
-
+    )
 }
 
 export default Footer;

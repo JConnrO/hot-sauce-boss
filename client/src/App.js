@@ -28,6 +28,7 @@ function App() {
           <Switch></Switch>
         </div>
         <SauceList></SauceList>
+        <Footer></Footer>
       </Router>
     </ApolloProvider >
   );
