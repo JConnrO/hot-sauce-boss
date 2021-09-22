@@ -4,11 +4,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
-import OutlinedInput from '@mui/material/OutlinedInput';
-import InputLabel from '@mui/material/InputLabel';
-import InputAdornment from '@mui/material/InputAdornment';
-import FormControl from '@mui/material/FormControl';
-
+import IconButton from '@mui/material/IconButton';
+import CloseIcon from '@material-ui/icons/Close';
 import { useMutation } from '@apollo/client';
 import { ADD_PRODUCT } from '../../utils/mutations';
 import Auth from '../../utils/auth';
@@ -22,18 +19,18 @@ const useStyles = makeStyles(theme => ({
     }
 }))
 
-const AddProduct = () => {
+const AddProduct = ({ handleModalClose }) => {
 
     const classes = useStyles();
 
     // set initial form state
     const [productFormData, setProductFormData] = useState({ name: '', description: '' });
     // set state for form validation
-    const [validated] = useState(false);
+    // const [validated] = useState(false);
     // set state for alert
-    const [showAlert, setShowAlert] = useState(false);
+    // const [showAlert, setShowAlert] = useState(false);
 
-    const [addProduct, { error }] = useMutation(ADD_PRODUCT);
+    const [addProduct] = useMutation(ADD_PRODUCT);
 
     const handleInputChange = (event) => {
         const { name, value } = event.target;
@@ -69,7 +66,7 @@ const AddProduct = () => {
 
         } catch (err) {
             console.error(err);
-            setShowAlert(true);
+            // setShowAlert(true);
         }
 
         setProductFormData({
@@ -94,7 +91,8 @@ const AddProduct = () => {
                 top: '50%',
                 left: '50%',
                 transform: 'translate(-50%, -50%)',
-                width: 800,
+                width: 400,
+                height: 300,
                 border: '2px solid #000',
                 boxShadow: 24,
                 pt: 2,
@@ -102,6 +100,13 @@ const AddProduct = () => {
                 pb: 3,
             }}
         >
+
+            <Grid>
+                <IconButton onClick={handleModalClose} alignItems="center">
+                    <CloseIcon />
+                </IconButton>
+            </Grid>
+
             <Grid container alignItems="center" justifyContent="center" flexDirection="row">
 
                 <TextField
