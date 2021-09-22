@@ -50,7 +50,8 @@ export default function MenuDrawer() {
     const [anchorEl, setAnchorEl] = React.useState(null);
 
     const handleClick = (event) => {
-        setAnchorEl(event.currentTarget);
+        setAnchorEl(event.currentTarget)
+      
     };
 
     const handleClose = () => {
@@ -83,6 +84,7 @@ export default function MenuDrawer() {
                             setLoginModal(true)
                             setSignupModal(false)
                             setAddProductModal(false)
+                            setAnchorEl(null)
                         }}>Login
                     </Button>
 
@@ -94,6 +96,7 @@ export default function MenuDrawer() {
                             setSignupModal(true)
                             setLoginModal(false)
                             setAddProductModal(false)
+                            setAnchorEl(null)
                         }}>Sign Up</Button>
 
                 </StyledMenuItem>
@@ -104,6 +107,7 @@ export default function MenuDrawer() {
                             setAddProductModal(true)
                             setSignupModal(false)
                             setLoginModal(false)
+                            setAnchorEl(null)
                         }}>Add Product</Button>
                 </StyledMenuItem>
 
