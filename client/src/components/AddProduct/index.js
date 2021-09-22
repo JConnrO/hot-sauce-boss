@@ -13,6 +13,7 @@ import { useMutation } from '@apollo/client';
 import { ADD_PRODUCT } from '../../utils/mutations';
 import Auth from '../../utils/auth';
 
+
 const useStyles = makeStyles(theme => ({
     coolers: {
         backgroundColor: "#70D6FF"
