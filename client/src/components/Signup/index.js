@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react';
+// import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
-
+import IconButton from '@mui/material/IconButton';
+import CloseIcon from '@material-ui/icons/Close';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../../utils/mutations';
 import Auth from '../../utils/auth';
@@ -19,27 +21,26 @@ const useStyles = makeStyles(theme => ({
     }
 }))
 
-const Signup = () => {
+const Signup = ({ handleModalClose }) => {
 
     const classes = useStyles();
 
     // set initial form state
     const [userFormData, setUserFormData] = useState({ name: '', password: '' });
     // set state for form validation
-    const [validated] = useState(false);
+    // const [validated] = useState(false);
     // set state for alert
-    const [showAlert, setShowAlert] = useState(false);
+    // const [showAlert, setShowAlert] = useState(false);
 
     // check error 
-    const [addUser, { error }] = useMutation(ADD_USER);
-    useEffect(() => {
-        if (error) {
-            setShowAlert(true)
-            console.log ("mutation error")
-        } else {
-            setShowAlert(false)
-        }
-    }, [error])
+    const [addUser] = useMutation(ADD_USER);
+    // useEffect(() => {
+    //     if (error) {
+    //         setShowAlert(true)
+    //     } else {
+    //         setShowAlert(false)
+    //     }
+    // }, [error])
 
     const handleInputChange = (event) => {
         const { name, value } = event.target;
@@ -73,7 +74,7 @@ const Signup = () => {
 
         } catch (err) {
             console.error(err);
-            setShowAlert(true);
+            // setShowAlert(true);
         }
 
         setUserFormData({
@@ -81,15 +82,6 @@ const Signup = () => {
             password: '',
         });
     };
-
-    // const handleSubmit = (event) => {
-    //     event.preventDefault();
-    //     const data = new FormData(event.currentTarget);
-    //     console.log({
-    //         name: data.get('name'),
-    //         password: data.get('password'),
-    //     });
-    // };
 
     return (
         <Box component="form"
@@ -113,6 +105,13 @@ const Signup = () => {
                 pb: 3,
             }}
         >
+
+            <Grid>
+                <IconButton onClick={handleModalClose} alignItems="center">
+                    <CloseIcon />
+                </IconButton>
+            </Grid>
+
             <Grid container alignItems="center" justifyContent="center" flexDirection="column">
                 <TextField
                     margin="normal"

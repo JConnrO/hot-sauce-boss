@@ -1,10 +1,11 @@
 import React from 'react';
-
 import Grid from '@mui/material/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import ProductForm from "../ProductForm"
+import TextField from '@mui/material/TextField';
+import IconButton from '@mui/material/IconButton';
+import CloseIcon from '@material-ui/icons/Close';
 
 const useStyles = makeStyles(theme => ({
     coolers: {
@@ -15,7 +16,7 @@ const useStyles = makeStyles(theme => ({
     }
 }))
 
-const EditProduct = () => {
+const EditProduct = ({handleClose}) => {
 
     const classes = useStyles();
 
@@ -27,7 +28,7 @@ const EditProduct = () => {
             password: data.get('password'),
         });
     };
-
+    
     return (
         <Box component="form"
             onSubmit={handleSubmit}
@@ -42,7 +43,8 @@ const EditProduct = () => {
                 top: '50%',
                 left: '50%',
                 transform: 'translate(-50%, -50%)',
-                width: 800,
+                width: 400,
+                height: 300,
                 border: '2px solid #000',
                 boxShadow: 24,
                 pt: 2,
@@ -50,7 +52,41 @@ const EditProduct = () => {
                 pb: 3,
             }}
         >
-            <ProductForm></ProductForm>
+
+            <Grid>
+                <IconButton onClick={handleClose}>
+                    <CloseIcon /> 
+                </IconButton>
+            </Grid>
+
+            <Grid container alignItems="center" justifyContent="center" flexDirection="row">
+
+                <TextField
+                    margin="normal"
+                    required
+                    id="name"
+                    label="Name"
+                    name="name"
+                    size="small"
+                    autoComplete="name"
+                    autoFocus
+                />
+
+            </Grid>
+
+            <Grid container alignItems="center" justifyContent="center" >
+
+                <TextField
+                    id="outlined-multiline-static"
+                    multiline
+                    rows={4}
+                    required
+                    name="description"
+                    label="Description"
+                    type="description"
+                />
+
+            </Grid>
 
             <Grid container alignItems="center" justifyContent="center">
                 <Button
