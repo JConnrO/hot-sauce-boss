@@ -25,15 +25,23 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_PRODUCT = gql`
-  mutation addProduct($productData: productInput!) {
-    addProduct(productData: $productData) {
+  mutation addProduct(
+    $name: String!
+    $description: String!
+    $price: String!
+    $quantity: String!
+  ) {
+    addProduct(
+      name: $name
+      description: $description
+      price: $price
+      quantity: $quantity
+    ) {
       _id
       name
-      addProduct {
-        name
-        description
-   
-      }
+      description
+      price
+      quantity
     }
   }
 `;
@@ -46,7 +54,7 @@ export const UPDATE_PRODUCT = gql`
       addProduct {
         name
         description
-        quantity 
+        quantity
         price
       }
     }
@@ -61,7 +69,7 @@ export const REMOVE_PRODUCT = gql`
       addProduct {
         name
         description
-        quantity 
+        quantity
         price
       }
     }
