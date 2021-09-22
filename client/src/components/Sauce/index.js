@@ -6,6 +6,8 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import spicyRice from '../../assets/fonts/SpicyRice-Regular.ttf'
+import EditProduct from '../EditProduct/index';
+import Modal from '@mui/material/Modal';
 
 function Sauce(props) {
 
@@ -18,11 +20,17 @@ function Sauce(props) {
       const newList = sauceList.filter(sauce => sauce.name !== name);
       setSauceList(newList);
     };
-    const editSauce = name => {
-        console.log("Edit Clicked");
-        const newList = sauceList.filter(sauce => sauce.name !== name);
-        setSauceList(newList);
-    };
+    // const editSauce = name => {
+    //     console.log("Edit Clicked");
+    //     const newList = sauceList.filter(sauce => sauce.name !== name);
+    //     setSauceList(newList);
+
+    // };
+    
+    const [open, setOpen] = React.useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
+
     return (
         <section>
             <h1 id="hotsauce">Sauces</h1>
@@ -45,13 +53,23 @@ function Sauce(props) {
                                 </Typography>
                             </CardContent>
                             <CardActions>
-                                <Button size="small" onClick={() => editSauce()}>Edit</Button>
+                                <Button size="small" onClick={handleOpen}>Edit</Button>
                                 <Button size="small" onClick={() => removeSauce(hotsauce.name)}>Delete</Button>
                             </CardActions>
                         </Card>
                     </div>
                 ))}
             </div>
+
+            <Modal
+                style={{
+                    position: "static"
+                }}
+                open={open}
+                onClose={handleClose}
+                aria-labelledby='editproduct-modal'>
+                <EditProduct handleClose={handleClose} ></EditProduct>
+            </Modal>
         </section>
     );
 }
