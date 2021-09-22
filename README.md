@@ -40,6 +40,11 @@ Always remember for every meal, the sauce is the boss!
 
 ## Usage 
 
+### Demo:
+
+* [Webpage Demo]()
+* [Graphql Demo]()
+
 ### Landing Page:
 
 When the user first enters the website, they are presented with the hot sauce dashboard.
