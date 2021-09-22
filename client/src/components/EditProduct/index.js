@@ -28,7 +28,7 @@ const EditProduct = ({handleClose}) => {
             password: data.get('password'),
         });
     };
-
+    
     return (
         <Box component="form"
             onSubmit={handleSubmit}
