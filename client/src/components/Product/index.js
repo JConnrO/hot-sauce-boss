@@ -16,6 +16,8 @@ import hoffs from '../../assets/hotsauce/hoffs.jpeg'
 import jolokia from '../../assets/hotsauce/jolokia.jpeg'
 import louisiana from '../../assets/hotsauce/louisiana.jpeg'
 
+import EditProduct from '../EditProduct/index';
+import Modal from '@mui/material/Modal';
 
 const Product = (props) => {
     // input ProductInput {
@@ -62,79 +64,11 @@ const Product = (props) => {
             quantity: "1",
             price: "1.99"
         },
-        {
-            name: "Franks Red",
-            description: "Frank's Red",
-            image: franks,
-            quantity: "1",
-            price: "1.99"
-        },
-        {
-            name: "Cholula",
-            description: "Cholula1",
-            image: cholula,
-            quantity: "1",
-            price: "1.99"
-
-        },
-        {
-            name: "Jolokia",
-            description: "Jolokia",
-            image: jolokia,
-            quantity: "1",
-            price: "1.99"
-        },
-        {
-            name: "Louisiana",
-            description: "Louisiana",
-            image: louisiana,
-            quantity: "1",
-            price: "1.99"
-        },
-        {
-            name: "Hoffs",
-            description: "Hoffs",
-            image: hoffs,
-            quantity: "1",
-            price: "1.99"
-        },
-        {
-            name: "Franks Red",
-            description: "Frank's Red",
-            image: franks,
-            quantity: "1",
-            price: "1.99"
-        },
-        {
-            name: "Cholula",
-            description: "Cholula1",
-            image: cholula,
-            quantity: "1",
-            price: "1.99"
-
-        },
-        {
-            name: "Jolokia",
-            description: "Jolokia",
-            image: jolokia,
-            quantity: "1",
-            price: "1.99"
-        },
-        {
-            name: "Louisiana",
-            description: "Louisiana",
-            image: louisiana,
-            quantity: "1",
-            price: "1.99"
-        },
-        {
-            name: "Hoffs",
-            description: "Hoffs",
-            image: hoffs,
-            quantity: "1",
-            price: "1.99"
-        },
     ]
+
+    const [open, setOpen] = React.useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
 
     return (
         <section>
@@ -158,13 +92,25 @@ const Product = (props) => {
                                 </Typography>
                             </CardContent>
                             <CardActions>
-                                <Button size="small">Edit</Button>
+                                
+                                <Button
+                                    onClick={handleOpen}>Edit</Button>
                                 <Button size="small">Delete</Button>
                             </CardActions>
                         </Card>
                     </div>
                 ))}
             </div>
+
+            <Modal
+                style={{
+                    position: "static"
+                }}
+                open={open}
+                onClose={handleClose}
+                aria-labelledby='editproduct-modal'>
+                <EditProduct handleClose={handleClose} ></EditProduct>
+            </Modal>
         </section>
     );
 }

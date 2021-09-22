@@ -3,12 +3,10 @@ import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
-import ListItemText from '@material-ui/core/ListItemText';
 import Modal from '@mui/material/Modal';
 import Login from '../Login/index';
 import Signup from '../Signup/index';
 import AddProduct from '../AddProduct/index';
-import EditProduct from '../EditProduct/index';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 
@@ -48,12 +46,12 @@ export default function MenuDrawer() {
     const [loginModal, setLoginModal] = useState(false);
     const [signupModal, setSignupModal] = useState(false);
     const [addProductModal, setAddProductModal] = useState(false);
-    const [editProductModal, setEditProductModal] = useState(false);
 
     const [anchorEl, setAnchorEl] = React.useState(null);
 
     const handleClick = (event) => {
-        setAnchorEl(event.currentTarget);
+        setAnchorEl(event.currentTarget)
+      
     };
 
     const handleClose = () => {
@@ -86,7 +84,7 @@ export default function MenuDrawer() {
                             setLoginModal(true)
                             setSignupModal(false)
                             setAddProductModal(false)
-                            setEditProductModal(false)
+                            setAnchorEl(null)
                         }}>Login
                     </Button>
 
@@ -98,7 +96,7 @@ export default function MenuDrawer() {
                             setSignupModal(true)
                             setLoginModal(false)
                             setAddProductModal(false)
-                            setEditProductModal(false)
+                            setAnchorEl(null)
                         }}>Sign Up</Button>
 
                 </StyledMenuItem>
@@ -109,25 +107,17 @@ export default function MenuDrawer() {
                             setAddProductModal(true)
                             setSignupModal(false)
                             setLoginModal(false)
-                            setEditProductModal(false)
+                            setAnchorEl(null)
                         }}>Add Product</Button>
-                </StyledMenuItem>
-
-                <StyledMenuItem>
-                    <Button
-                        onClick={() => {
-                            setEditProductModal(true)
-                            setAddProductModal(false)
-                            setSignupModal(false)
-                            setLoginModal(false)
-                        }}>Edit Product</Button>
                 </StyledMenuItem>
 
             </StyledMenu>
 
             <Modal
                 style={{
-                    position: "static"
+                    position: "static", 
+                    width: "1000px", 
+                    height: "1000px"
                 }}
                 open={loginModal}
                 onClose={() => setLoginModal(false)}
@@ -155,15 +145,6 @@ export default function MenuDrawer() {
                 <AddProduct handleModalClose={() => setAddProductModal(false)}></AddProduct>
             </Modal>
 
-            <Modal
-                style={{
-                    position: "static"
-                }}
-                open={editProductModal}
-                onClose={() => setEditProductModal(false)}
-                aria-labelledby='editproduct-modal'>
-                <EditProduct handleModalClose={() => setEditProductModal(false)}></EditProduct>
-            </Modal>
 
         </div>
     );

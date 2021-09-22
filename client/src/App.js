@@ -1,10 +1,12 @@
 import React from 'react';
 import Nav from './components/Nav';
-import Product from './components/Product';
+//import Product from './components/Product';
 import Footer from './components/Footer';
+import SauceList from './components/SauceList';
 import './App.css';
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Home from './pages/Home';
 
 const httpLink = createHttpLink({
   uri: 'http://localhost:3001/graphql',
@@ -23,16 +25,9 @@ function App() {
           <Nav></Nav>
         </div>
         <div >
-          <Switch>
-
-          </Switch>
+          <Switch></Switch>
         </div>
-        <Product>
-
-        </Product>
-        <Footer>
-
-        </Footer>
+        <SauceList></SauceList>
       </Router>
     </ApolloProvider >
   );
