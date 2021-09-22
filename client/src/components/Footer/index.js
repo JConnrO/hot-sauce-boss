@@ -49,7 +49,7 @@ const Footer = () => {
 
             </Grid>
         </footer >
-    )
+
 }
 
 export default Footer;
