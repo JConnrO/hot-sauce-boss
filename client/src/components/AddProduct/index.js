@@ -29,8 +29,8 @@ const AddProduct = () => {
   const [productFormData, setProductFormData] = useState({
     name: "",
     description: "",
-    price: "",
-    quantity: "",
+    price: parseFloat(""),
+    quantity: parseInt(""),
   });
   // set state for form validation
   const [validated] = useState(false);
@@ -77,8 +77,8 @@ const AddProduct = () => {
     setProductFormData({
       name: "",
       description: "",
-      quantity: "",
-      price: "",
+      quantity: parseInt(""),
+      price: parseFloat(""),
     });
   };
 
