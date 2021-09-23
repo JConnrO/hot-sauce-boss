@@ -1,53 +1,14 @@
-# HotSauceBoss
-test
-#Idea: 
-Hot Sauce Committee
-
-MVP:
-User can make an account.
-User can CRUD items in their shop.
-User can buy an item.
-User can rate an item.
-
-Data: 
-  User:
-    1. Account Name
-    2. Password
-    3. Shop items    
-  Shop Item: 
-    1. Picture
-    2. Price
-    3. Name
-    4. Hot/Scoville Rating
-    5. Hot Sauce owner name
-    6. Description (Optional)
-    
-  Shop: (Optional)
-    1. Shop Items Array
-    2. Shop Name
-    3. Shop owner name
-  
-Search by hotness (Via tabs, no search bar)
-
-# Schedule
-9/16 - M  - 7:00 - 9  
-9/17 - T  - 6:30 - 9  
-9/18 - W  - 6:30 - 9  
-9/16 - Th - 6:30 - 9  
-9/17 - F  - 6:30 - 9  
-9/18 - S  - 
-9/19 - Su - 6:30 - 9 - MVP DUE  
-9/20 - M  - 6:30 - 9 -  
-9/21 - T  - 6:30 - 9 -  
-9/22 - W  - 6:30 - 9 - PRESENTATION 
-![Wireframe](https://user-images.githubusercontent.com/14891319/133174756-5d4b96cd-5d66-407d-b1bc-b317dfa62f03.png)
+# Hot Sauce Boss
 
 This application is the final group project for the Rutgers Coding Bootcamp.
 
 ## Description 
 
-  
+Scenerio: you're having a late-night dinner, and you're craving some hot sauce to go with your side of delicious wings. You open your fridge to reach for all those handy, flavor-filled sauces. You panic. You forgot to get the most important part of your meal. The hot sauce!!! 
 
+Luckily for you, you have your handy-dandy Hot Sauce Boss app to help you with selecting some replacement sauces. With this app you'll be able to see other user's hot sauce selections, so you don't have to worry about scrounging around for a new sauce. You can even make an account to add your own future recommendations!
+
+Always remember for every meal, the sauce is the boss!
 
 ## Table of Contents 
 * [Deploy](#deploy)
@@ -57,11 +18,13 @@ This application is the final group project for the Rutgers Coding Bootcamp.
 * [License](#license)
 
 ## Deploy
-<!-- Make ACTIVE link -->
-[HotSauceBoss Website]()!
+
+[Hot Sauce Boss](https://hot-sauce-boss.herokuapp.com/)
 
 
-[HotSauceBoss Slide Presentation]()
+[Google Slides Presentation](https://docs.google.com/presentation/d/1X_mqOuRji18Zf1p0eE0-4mGU8K9AvyOHhM-bSWyNoAM/edit#slide=id.gede194eb96_1_25)
+
+[Wireframe](https://user-images.githubusercontent.com/14891319/133174756-5d4b96cd-5d66-407d-b1bc-b317dfa62f03.png)
 
 ## Technologies Used
 
@@ -77,53 +40,43 @@ This application is the final group project for the Rutgers Coding Bootcamp.
 
 ## Usage 
 
+<!-- ### Demo:
+
+* [Webpage Demo]()
+* [Graphql Demo]() -->
+
 ### Landing Page:
 
-When the user first enters the website, they are presented with the landing page.
+When the user first enters the website, they are presented with the hot sauce dashboard.
 
 
-![Screenshot]()
+![Screenshot](client/public/images/HotSauceBossLanding.png)
+
+### Sign-up Page:
+ 
+Upon clicking sign-up, the user is brought to the user sign-up page. Once the user creates a new account they will be able to post their own collection of hot sauces.
+
+![Screenshot](client/public/images/HotSauceBossSignUp.png)
 
 ### Login Page:
- 
-Upon clicking login the user is brought to the login/create account page. Once the user creates an account they will be able to access their recipes.
+
+On the login page, the user is able to login if they sign out manually or are disconnect from wifi.
 
 
-![Screenshot]()
+![Screenshot](client/public/images/Login.png)
 
-### Create Post Page:
+### Add Product Page:
 
-On the recipe creation page, the user is presented with the 'Create New Post' card and their post dashboard, with options to delete or edit their posts.
-
-
-![Screenshot]()
-
-### Create Post Page (with input text):
-
-The user must enter in a title, youtube link, and a description to be able to post.
+The user can add a product to the dashboard.
 
 
-![Screenshot]()
+![Screenshot](client\public\images\AddProduct.png)
 
-### Edit Post Page:
+### Edit Product Page:
 
-The user can also choose to delete or edit past created recipes. When the user clicks edit, they are brought to an edit card, which they are able to enter a new title and description. Once the save button is clicked, the user is brought back to the dashboard.
+From the dashboard, the user can edit the name and description of said product.
 
-![Screenshot]()
-
-### My Recipes (with new post):
-
-The user can see the now created post in the dashboard.
-
-
-![Screenshot]()
-
-### Landing Page (with new post):
-
-When the user clicks the ReciPlanner logo, they are brought back to the landing page with the 'My Recipes' button in the navbar now showing, along with the user's newly created post.
-
-![Screenshot]()
-
+![Screenshot](client\public\images\EditProduct.png)
 
 ## Contributions
 
