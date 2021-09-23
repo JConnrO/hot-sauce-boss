@@ -1,4 +1,4 @@
-# HotSauceBoss
+# Hot Sauce Boss
 
 This application is the final group project for the Rutgers Coding Bootcamp.
 
@@ -40,57 +40,43 @@ Always remember for every meal, the sauce is the boss!
 
 ## Usage 
 
-### Demo:
+<!-- ### Demo:
 
 * [Webpage Demo]()
-* [Graphql Demo]()
+* [Graphql Demo]() -->
 
 ### Landing Page:
 
 When the user first enters the website, they are presented with the hot sauce dashboard.
 
 
-![Screenshot]()
+![Screenshot](client/public/images/HotSauceBossLanding.png)
 
 ### Sign-up Page:
  
 Upon clicking sign-up, the user is brought to the user sign-up page. Once the user creates a new account they will be able to post their own collection of hot sauces.
 
-![Screenshot]()
+![Screenshot](client/public/images/HotSauceBossSignUp.png)
 
 ### Login Page:
 
 On the login page, the user is able to login if they sign out manually or are disconnect from wifi.
 
 
-![Screenshot]()
+![Screenshot](client/public/images/Login.png)
 
 ### Add Product Page:
 
-The user must enter in a title, 
+The user can add a product to the dashboard.
 
 
-![Screenshot]()
+![Screenshot](client\public\images\AddProduct.png)
 
-### Edit Post Page:
+### Edit Product Page:
 
-The user can also choose to delete or edit past created recipes. When the user clicks edit, they are brought to an edit card, which they are able to enter a new title and description. Once the save button is clicked, the user is brought back to the dashboard.
+From the dashboard, the user can edit the name and description of said product.
 
-![Screenshot]()
-
-### My Recipes (with new post):
-
-The user can see the now created post in the dashboard.
-
-
-![Screenshot]()
-
-### Landing Page (with new post):
-
-When the user clicks the ReciPlanner logo, they are brought back to the landing page with the 'My Recipes' button in the navbar now showing, along with the user's newly created post.
-
-![Screenshot]()
-
+![Screenshot](client\public\images\EditProduct.png)
 
 ## Contributions
 
