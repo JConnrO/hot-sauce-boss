@@ -15,12 +15,12 @@ const productSchema = new Schema({
     type: String,
   },
   price: {
-    type: Number,
+    type: String,
     required: true,
     min: 0.99,
   },
   quantity: {
-    type: Number,
+    type: String,
     min: 0,
     default: 0,
   },
